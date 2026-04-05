@@ -24,6 +24,13 @@
     src="https://www.facebook.com/tr?id=832767357702650&ev=PageView&noscript=1"
     /></noscript>
     <!-- End Meta Pixel Code -->
+    <!-- Google Tag Manager -->
+    <script>(function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+    new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+    j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+    'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+    })(window,document,'script','dataLayer','GTM-KVD8WD6');</script>
+    <!-- End Google Tag Manager -->
     <style>
         *, *::before, *::after { box-sizing: border-box; margin: 0; padding: 0; }
 
@@ -520,6 +527,41 @@
     </style>
 </head>
 <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript><iframe src="https://www.googletagmanager.com/ns.html?id=GTM-KVD8WD6"
+    height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
+    <!-- End Google Tag Manager (noscript) -->
+
+    <!-- UTM / click-id pass-through: forward incoming ad attribution to all outbound Nancy links -->
+    <script>
+    (function(){
+      var incoming = window.location.search;
+      if (!incoming || incoming.length < 2) return;
+      var params = new URLSearchParams(incoming);
+      // only forward known attribution keys
+      var keep = ['utm_source','utm_medium','utm_campaign','utm_content','utm_term','fbclid','gclid','ttclid','msclkid','twclid'];
+      var forward = new URLSearchParams();
+      keep.forEach(function(k){ if (params.has(k)) forward.set(k, params.get(k)); });
+      var fwdStr = forward.toString();
+      if (!fwdStr) return;
+      function decorate(){
+        document.querySelectorAll('a[href*="hellonancy.com"]').forEach(function(a){
+          try {
+            var u = new URL(a.href);
+            var existing = new URLSearchParams(u.search);
+            keep.forEach(function(k){ if (forward.has(k) && !existing.has(k)) existing.set(k, forward.get(k)); });
+            u.search = existing.toString();
+            a.href = u.toString();
+          } catch(e){}
+        });
+      }
+      if (document.readyState === 'loading') {
+        document.addEventListener('DOMContentLoaded', decorate);
+      } else {
+        decorate();
+      }
+    })();
+    </script>
 
     <!-- ─── MINIMAL HEADER ─── -->
     <header class="site-header">
