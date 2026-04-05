@@ -532,11 +532,9 @@
     height="0" width="0" style="display:none;visibility:hidden"></iframe></noscript>
     <!-- End Google Tag Manager (noscript) -->
 
-    <!-- UTM / click-id pass-through: forward incoming ad attribution to all outbound Nancy links -->
+    <!-- UTM / click-id pass-through: forward incoming ad attribution to outbound Nancy links on click -->
     <script>
     (function(){
-      if (window.__utmPassthroughRan) return;
-      window.__utmPassthroughRan = true;
       var incoming = window.location.search;
       if (!incoming || incoming.length < 2) return;
       var params = new URLSearchParams(incoming);
@@ -544,22 +542,17 @@
       var forward = {};
       keep.forEach(function(k){ if (params.has(k)) forward[k] = params.get(k); });
       if (!Object.keys(forward).length) return;
-      function decorate(){
-        document.querySelectorAll('a[href*="hellonancy.com"]').forEach(function(a){
-          try {
-            var u = new URL(a.href);
-            // wipe any stale copies of our keys to guarantee exactly one of each
-            keep.forEach(function(k){ u.searchParams.delete(k); });
-            Object.keys(forward).forEach(function(k){ u.searchParams.set(k, forward[k]); });
-            a.href = u.toString();
-          } catch(e){}
-        });
-      }
-      if (document.readyState === 'loading') {
-        document.addEventListener('DOMContentLoaded', decorate);
-      } else {
-        decorate();
-      }
+      // decorate on click (after GA4/GTM auto-tagging) so we own the final query string
+      document.addEventListener('click', function(e){
+        var a = e.target.closest && e.target.closest('a[href*="hellonancy.com"]');
+        if (!a) return;
+        try {
+          var u = new URL(a.href);
+          keep.forEach(function(k){ u.searchParams.delete(k); });
+          Object.keys(forward).forEach(function(k){ u.searchParams.set(k, forward[k]); });
+          a.href = u.toString();
+        } catch(err){}
+      }, true);
     })();
     </script>
 
