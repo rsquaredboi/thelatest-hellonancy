@@ -134,40 +134,39 @@
 
         /* ─── HEADER ─── */
         .site-header {
-            background: var(--vice-black);
-            color: var(--vice-white);
+            background: var(--vice-white);
+            color: var(--vice-black);
             position: sticky;
             top: 0;
             z-index: 100;
-            border-bottom: 1px solid var(--vice-neutral-10);
+            border-bottom: 1px solid var(--vice-neutral-90);
         }
         .site-header__upper {
             max-width: var(--wide-width);
             margin: 0 auto;
-            padding: 14px var(--site-edge);
+            padding: 18px var(--site-edge);
             display: flex;
             align-items: center;
-            justify-content: space-between;
+            justify-content: center;
             gap: 24px;
         }
-        .vice-logo { display: block; line-height: 0; }
-        .vice-logo img { height: 28px; width: auto; }
-        .site-header__nav {
-            display: flex;
-            gap: 28px;
-            font-family: var(--font-secondary);
+        .vice-logo { display: inline-flex; line-height: 0; }
+        .vice-logo img { height: 32px; width: auto; filter: invert(1); }
+
+        /* Top-of-page affiliate strip (sits between nav and black hero) */
+        .top-affiliate-strip {
+            background: var(--vice-neutral-90);
+            color: var(--vice-neutral-20);
+            font-family: var(--font-primary);
             font-size: 0.875rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.5px;
+            text-align: center;
+            padding: 14px var(--site-edge);
+            line-height: 1.4;
         }
-        .site-header__nav a {
-            color: var(--vice-white);
-            text-decoration: none;
-        }
-        .site-header__nav a:hover { color: var(--vice-neutral-70); }
-        @media (max-width: 720px) {
-            .site-header__nav { display: none; }
+        .top-affiliate-strip a {
+            color: var(--vice-black);
+            text-decoration: underline;
+            font-weight: 500;
         }
 
         /* ─── ARTICLE HEADER HERO — black background, white text ─── */
@@ -181,65 +180,71 @@
             margin: 0 auto;
         }
         .article-section-label {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            font-weight: 700;
-            text-transform: uppercase;
-            letter-spacing: 0.1em;
+            font-family: var(--font-primary);
+            font-size: 0.875rem;
+            font-weight: 500;
+            text-transform: none;
+            letter-spacing: 0;
             color: #ff3030;
-            margin-bottom: 28px;
+            margin-bottom: 20px;
             display: block;
+            text-decoration: underline;
+            text-underline-offset: 3px;
         }
         .entry-title {
             font-family: var(--font-secondary);
             font-weight: 900;
-            font-size: clamp(2.25rem, 5vw, 3.25rem);
-            line-height: 1.05;
-            letter-spacing: -0.01em;
+            font-size: clamp(2.5rem, 5.5vw, 4rem);
+            line-height: 1.02;
+            letter-spacing: -0.015em;
             color: var(--vice-white);
-            margin-bottom: 20px;
+            margin-bottom: 24px;
             text-transform: none;
         }
         .entry-dek {
             font-family: var(--font-secondary);
             font-size: 1.375rem;
-            font-weight: 400;
-            font-style: italic;
-            line-height: 1.35;
+            font-weight: 500;
+            font-style: normal;
+            line-height: 1.4;
             color: var(--vice-white);
             margin-bottom: 36px;
-            max-width: 38rem;
         }
         @media (max-width: 720px) {
             .entry-dek { font-size: 1.125rem; }
         }
         .entry-byline {
-            font-family: var(--font-mono);
-            font-size: 0.75rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
+            font-family: var(--font-secondary);
+            font-size: 0.9375rem;
             color: var(--vice-white);
             display: flex;
             flex-wrap: wrap;
-            gap: 24px;
-            padding-top: 20px;
+            align-items: baseline;
+            justify-content: space-between;
+            gap: 12px 24px;
+            padding-top: 24px;
             border-top: 1px solid var(--vice-neutral-30);
         }
-        .entry-byline > div { display: flex; gap: 6px; flex-direction: column; }
-        .entry-byline .label { color: var(--vice-neutral-70); font-weight: 400; }
-        .entry-byline .value { color: var(--vice-white); font-weight: 700; }
+        .entry-byline__authors {
+            font-weight: 500;
+            color: var(--vice-white);
+        }
+        .entry-byline__date {
+            font-weight: 400;
+            color: var(--vice-neutral-70);
+            font-size: 0.875rem;
+        }
         .entry-byline a { color: var(--vice-white); text-decoration: underline; }
         .reproduction-notice {
-            font-family: var(--font-mono);
-            font-size: 0.6875rem;
-            text-transform: uppercase;
-            letter-spacing: 0.08em;
+            font-family: var(--font-primary);
+            font-size: 0.75rem;
             color: var(--vice-neutral-70);
-            margin-top: 16px;
+            margin-top: 14px;
             line-height: 1.4;
+            font-style: italic;
         }
         .reproduction-notice a {
-            color: var(--vice-white);
+            color: var(--vice-neutral-80);
             text-decoration: underline;
             text-underline-offset: 2px;
         }
@@ -734,25 +739,20 @@
         </div>
     </header>
 
+    <!-- ─── TOP AFFILIATE STRIP ─── -->
+    <div class="top-affiliate-strip">
+        We independently evaluate all of our recommendations. When you buy through our links, we may earn an affiliate commission. <a href="https://hellonancy.com/products/lem" target="_blank" rel="noopener">Learn more here.</a>
+    </div>
+
     <!-- ─── ENTRY HEADER — BLACK HERO BLOCK ─── -->
     <section class="entry-header">
         <div class="entry-header__inner">
-            <span class="article-section-label">Sex &nbsp;&bull;&nbsp; VIA</span>
+            <span class="article-section-label">Sex via</span>
             <h1 class="entry-title">Viral Sex Toy &#8216;Lem Clitoral Massager&#8217; Is Everywhere Online, But Is It Truly an Eater?</h1>
-            <p class="entry-dek">A lemon-shaped suction toy is taking over TikTok. We spent three weeks finding out if the hype is real &mdash; or just another thing the internet collectively decided to lose its mind over.</p>
+            <p class="entry-dek">Meet the latest in the clit toy hype.</p>
             <div class="entry-byline">
-                <div>
-                    <span class="label">By</span>
-                    <span class="value">Gigi Fong</span>
-                </div>
-                <div>
-                    <span class="label">Reviewed By</span>
-                    <span class="value">Ysolt Usigan</span>
-                </div>
-                <div>
-                    <span class="label">Published</span>
-                    <span class="value">April 2, 2026</span>
-                </div>
+                <div class="entry-byline__authors">By Gigi Fong &nbsp;|&nbsp; Reviewed by Ysolt Usigan</div>
+                <div class="entry-byline__date">April 2, 2026, 8:50am</div>
             </div>
             <p class="reproduction-notice">Originally published on <a href="https://www.vice.com/en/via/hello-nancy-lem-clitoral-massager-review/" target="_blank" rel="noopener">VICE.com</a>. Reproduced here for convenience.</p>
         </div>
