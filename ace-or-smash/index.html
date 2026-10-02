@@ -3,19 +3,19 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>A Tennis Fan Thought This Was Special-Edition Merch. It&rsquo;s a Vibrator. | The Latest</title>
-    <meta name="description" content="Honestly, an easy mistake. It&rsquo;s the most collectible thing in tennis right now, and it&rsquo;s not for the court. Everything to know about ACE and SMASH, and who to gift them to.">
-    <meta property="og:title" content="A Tennis Fan Thought This Was Special-Edition Merch. It&rsquo;s a Vibrator.">
-    <meta property="og:description" content="Honestly, an easy mistake. It&rsquo;s the most collectible thing in tennis right now, and it&rsquo;s not for the court.">
-    <meta property="og:image" content="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/WhatsAppImage2026-09-20at6.59.31PM.jpg?width=1200">
+    <title>Ace or Smash? Your Tennis Personality Says Which One You Need | The Latest</title>
+    <meta name="description" content="Finesse player or power hitter? Take the six-question tennis personality quiz to find out whether ACE, SMASH or the Grand Slam Bundle is your match.">
+    <meta property="og:title" content="Ace or Smash? Your Tennis Personality Says Which One You Need">
+    <meta property="og:description" content="Finesse player or power hitter? Answer six questions. Be honest.">
+    <meta property="og:image" content="https://thelatest.hellonancy.com/ace-or-smash/img/ace-vs-smash.jpg">
     <meta property="og:type" content="article">
     <link rel="icon" type="image/svg+xml" href="/assets/favicon.svg">
-    <link rel="canonical" href="https://thelatest.hellonancy.com/tennis-merch/">
+    <link rel="canonical" href="https://thelatest.hellonancy.com/ace-or-smash/">
     <link rel="preload" as="font" type="font/woff2" href="/assets/fonts/BricolageGrotesque.woff2" crossorigin>
     <link rel="preconnect" href="https://cdn.shopify.com" crossorigin>
     <link rel="dns-prefetch" href="https://www.googletagmanager.com">
     <link rel="dns-prefetch" href="https://connect.facebook.net">
-    <link rel="preload" as="image" href="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/WhatsAppImage2026-09-20at6.59.31PM.jpg?width=1200" fetchpriority="high">
+    <link rel="preload" as="image" href="/ace-or-smash/img/ace-vs-smash.jpg" fetchpriority="high">
 
     <!-- Meta Pixel Code -->
     <script>
@@ -790,12 +790,57 @@
         .entry-content .comment p { margin: 0; font-family: var(--font-secondary); font-weight: 600; font-size: 1.125rem; line-height: 1.35; }
         body { padding-bottom: 0; }
         @media (max-width: 768px) { .site-footer { padding-bottom: 120px; } }
-        .keep-reading { margin: 40px 0 0; padding-top: 18px; border-top: 2px solid var(--ink); }
-        .keep-reading__label { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; margin-bottom: 4px; }
+
+        /* ─── KEEP READING + VERDICT ACTIONS ─── */
+        .keep-reading { margin: 48px 0 0; border-top: 2px solid var(--ink); }
+        .keep-reading__label { font-family: var(--font-mono); font-size: 0.75rem; font-weight: 700; text-transform: uppercase; letter-spacing: 0.12em; padding: 16px 0 4px; }
         .keep-reading ul { list-style: none; }
-        .keep-reading li { padding: 14px 0; border-bottom: 1px solid var(--n90); font-family: var(--font-secondary); font-weight: 700; font-size: 1.1875rem; line-height: 1.25; }
-        .entry-content .keep-reading a { text-decoration: none; font-weight: 700; }
+        .keep-reading li { border-bottom: 1px solid var(--n90); }
+        .entry-content .keep-reading a { display: block; position: relative; padding: 14px 32px 14px 0; font-family: var(--font-secondary); font-weight: 700; font-size: 1.1875rem; line-height: 1.3; text-decoration: none; }
+        .entry-content .keep-reading a::after { content: "\2192"; position: absolute; right: 4px; top: 14px; }
         .entry-content .keep-reading a:hover { color: var(--accent); }
+        .entry-content .keep-reading a:focus-visible { outline: 2px solid var(--ink); outline-offset: 2px; }
+        .verdict-actions { display: flex; flex-wrap: wrap; gap: 10px; }
+
+        /* ─── QUIZ (ace-or-smash) ─── */
+        .hero-figure--graphic img { aspect-ratio: 4 / 3; object-position: center; }
+        .quiz { background: var(--court); color: var(--paper); padding: 30px 28px 28px; margin: 24px 0 40px; }
+        .quiz [hidden] { display: none !important; }
+        .entry-content .quiz p { color: var(--paper); }
+        .entry-content .quiz__nojs { font-size: 1rem; margin: 0; }
+        .entry-content .quiz__nojs a { color: var(--ball); }
+        .quiz__progress { display: flex; justify-content: space-between; gap: 12px; font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ball); margin-bottom: 10px; }
+        .quiz__bar { height: 6px; background: rgba(255,255,255,0.18); margin-bottom: 26px; }
+        .quiz__bar span { display: block; height: 100%; width: 0; background: var(--ball); transition: width 0.25s ease; }
+        .entry-content .quiz h3 { color: var(--paper); font-stretch: 85%; text-transform: uppercase; font-size: 1.75rem; line-height: 1.1; margin: 0 0 20px; }
+        .quiz h3:focus { outline: none; }
+        .quiz, .quiz h3, .quiz__result, #results-explained { scroll-margin-top: 110px; }
+        .quiz h3:focus-visible { outline: 3px solid var(--ball); outline-offset: 4px; }
+        .quiz__opts { display: grid; gap: 10px; }
+        .quiz__opt { display: flex; align-items: center; gap: 14px; width: 100%; text-align: left; background: var(--paper); color: var(--ink); border: 2px solid var(--paper); border-radius: 0; font-family: var(--font-secondary); font-weight: 600; font-size: 1.0625rem; line-height: 1.35; padding: 14px 16px; cursor: pointer; -webkit-appearance: none; appearance: none; transition: background 0.15s ease, border-color 0.15s ease; }
+        .quiz__opt:hover { background: var(--ball); border-color: var(--ball); }
+        .quiz__key { flex: 0 0 auto; width: 1.875rem; height: 1.875rem; line-height: 1.875rem; text-align: center; font-family: var(--font-mono); font-size: 0.8125rem; font-weight: 700; background: var(--court); color: var(--ball); }
+        .quiz__opt:focus-visible, .quiz__retake:focus-visible, .quiz a:focus-visible { outline: 3px solid var(--ball); outline-offset: 3px; }
+        .quiz__result figure { margin: 0 0 22px; }
+        .quiz__result img { width: 100%; height: auto; display: block; }
+        .quiz__result figcaption { font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--n80); margin-top: 10px; line-height: 1.4; }
+        .quiz__eyebrow { font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.12em; color: var(--ball); margin-bottom: 6px; }
+        .entry-content .quiz h3.quiz__result-title { font-size: 2.5rem; margin-bottom: 14px; }
+        .entry-content .quiz__result p { font-size: 1.0625rem; margin-bottom: 14px; }
+        .quiz__price strong { color: var(--ball); }
+        .quiz__code { font-family: var(--font-mono); font-weight: 700; letter-spacing: 0.08em; background: var(--paper); color: var(--ink); padding: 2px 8px; }
+        .entry-content p.quiz__score { font-family: var(--font-mono); font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--n80); }
+        .quiz__actions { display: flex; flex-wrap: wrap; gap: 10px; margin-top: 6px; }
+        .quiz .buy-now-btn { background: var(--ball); border-color: var(--ball); color: var(--ink) !important; }
+        .quiz .buy-now-btn:hover { background: var(--paper); border-color: var(--paper); }
+        .quiz__retake { background: transparent; color: var(--paper); border: 1px solid var(--paper); border-radius: 0; font-family: var(--font-secondary); font-size: 0.9375rem; font-weight: 700; line-height: 1; padding: 14px 20px; cursor: pointer; -webkit-appearance: none; appearance: none; }
+        .quiz__retake:hover { background: var(--paper); color: var(--ink); }
+        @media (max-width: 520px) {
+            .quiz { padding: 24px 18px; margin-left: calc(var(--site-edge) * -1); margin-right: calc(var(--site-edge) * -1); }
+            .entry-content .quiz h3 { font-size: 1.5rem; }
+            .entry-content .quiz h3.quiz__result-title { font-size: 2rem; }
+            .quiz__actions > * { width: 100%; text-align: center; }
+        }
     </style>
 </head>
 <body>
@@ -838,144 +883,276 @@
     <!-- ─── ENTRY HEADER ─── -->
     <section class="entry-header">
         <div class="entry-header__inner">
-            <span class="article-section-label">Sex &amp; Culture &middot; Gift Guide</span>
-            <h1 class="entry-title">A Tennis Fan Thought This Was Special-Edition Merch. It&rsquo;s a Vibrator.</h1>
-            <p class="entry-dek">Honestly, an easy mistake. It&rsquo;s the most collectible thing in tennis right now, and it&rsquo;s not for the court.</p>
+            <span class="article-section-label">Quiz &middot; Sex &amp; Wellness</span>
+            <h1 class="entry-title">Ace or Smash? Your Tennis Personality Says Which One You Need</h1>
+            <p class="entry-dek">Finesse player or power hitter? Answer six questions. Be honest.</p>
             <div class="entry-byline">
                 <div class="entry-byline__authors">By Nell Farrow</div>
-                <div class="entry-byline__date">October 2, 2026 &nbsp;&middot;&nbsp; 9 min read</div>
+                <div class="entry-byline__date">October 3, 2026 &nbsp;&middot;&nbsp; 10 min read</div>
             </div>
         </div>
     </section>
 
     <!-- ─── HERO IMAGE ─── -->
-    <figure class="hero-figure">
-        <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/WhatsAppImage2026-09-20at6.59.31PM.jpg?width=1600" alt="A pink Nancy tennis ball next to ACE in Tennis Green and Nancy Pink on a clay court, beside a racket" width="1600" height="1600" fetchpriority="high" decoding="async">
-        <figcaption>Spot the merch. One of these is an actual tennis ball. The other two are ACE. Photo: Hello Nancy</figcaption>
+    <figure class="hero-figure hero-figure--graphic">
+        <img src="/ace-or-smash/img/ace-vs-smash.jpg" alt="Side-by-side graphic: ACE, a tennis-ball-shaped air suction toy, labeled Finesse on a cream background, and SMASH, a wand with a tennis-ball head, labeled Power on court green" width="1200" height="900" fetchpriority="high" decoding="async">
+        <figcaption>Finesse on the left, power on the right. Choose wisely (or don&rsquo;t). Photo: Hello Nancy</figcaption>
     </figure>
 
     <!-- ─── ARTICLE BODY ─── -->
     <article class="entry-content">
 
-        <p class="lede">Picture it. Late summer in Queens, the biggest two weeks in New York tennis, and someone is handing out the cutest little tennis balls you have ever seen. Soft. Palm-sized. One in that perfect fuzzy-ball green, one in a pink that belongs on a pleated skirt.</p>
+        <p class="lede">Every tennis player has a type. Some win with angles, patience and a drop shot so soft it barely clears the net. Others would rather hit the ball so hard the point is over before anyone has time to think.</p>
 
-        <p>One fan pocketed hers, assumed she&rsquo;d scored a limited-edition souvenir, and told the internet about it. Then her friend took a closer look.</p>
+        <p>Nancy built its tennis toys around exactly that split. <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash" target="_blank" rel="noopener">ACE</a> is the finesse player: a palm-sized air suction toy shaped like a tennis ball. <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash" target="_blank" rel="noopener">SMASH</a> is the power hitter: a full-body wand with a tennis-ball head and deep, rumbly vibrations.</p>
 
-        <figure class="meme-figure">
-            <img src="/tennis-merch/img/meme-thread-1.jpg" alt="Social post reading: They're handing out these cute little special edition tennis balls, with photos of a pink ball in the stands. A reply says: So turns out they're actually tennis ball shaped vibrators from Nancy LOL" loading="lazy" decoding="async" width="1080" height="1350">
-            <figcaption>The post that started it all. Usernames blurred, and one tournament name redacted, because our lawyers are tennis fans too.</figcaption>
-        </figure>
-
-        <p>Reader, she had not scored merch.</p>
-
-        <!-- ─── THE MEME ─── -->
-        <h2>Then the internet got hold of it</h2>
-
-        <p>Within a day, the mix-up was a WorldStar headline. The carousel (a paid partnership with Nancy, in the name of full transparency) pulled in more than <strong>35,000 likes and 640-plus comments</strong>, and it turns out everyone has an opinion about accidentally pocketing a vibrator.</p>
-
-        <figure class="meme-figure meme-figure--cover">
-            <img src="/tennis-merch/img/meme-worldstar-cover.jpg" alt="Meme with a NEWS banner: Woman shocked after realizing the free tennis ball she got at the [redacted] was actually this. A woman in a pink dress dances in the stands, with an inset of a hand holding a pink ACE" loading="lazy" decoding="async" width="1080" height="1350">
-            <figcaption>The headline that launched a thousand group chats. Via @worldstar on Instagram, September 9, 2026. Paid partnership with Hello Nancy.</figcaption>
-        </figure>
-
-        <p>The comments section, as always, was the best part.</p>
-
-        <div class="comment-stack" aria-label="Selected comments">
-            <div class="comment">
-                <span class="comment__avatar" aria-hidden="true"></span>
-                <div><span class="comment__who">A reply on X</span><p>&ldquo;The way I would&rsquo;ve put that in my purse and gone home still thinking it was merch 🤣&rdquo;</p></div>
-            </div>
-            <div class="comment">
-                <span class="comment__avatar comment__avatar--pink" aria-hidden="true"></span>
-                <div><span class="comment__who">An Instagram comment</span><p>&ldquo;I def would&rsquo;ve been confused af lmaooo&rdquo;</p></div>
-            </div>
-            <div class="comment">
-                <span class="comment__avatar comment__avatar--green" aria-hidden="true"></span>
-                <div><span class="comment__who">An Instagram comment</span><p>&ldquo;Then the pink got the nerve to be sold out 😂&rdquo;</p></div>
-            </div>
-        </div>
-
-        <p>And because the universe has a sense of humor, Nancy&rsquo;s girls in matching pink, the ones handing out the balls, ended up dancing on the big screen.</p>
-
-        <figure class="meme-figure">
-            <img src="/tennis-merch/img/meme-thread-2.jpg" alt="Social post reading: Omg I was there and saw them dancing on the jumbotron. Now I'm mad I didn't get one, above a photo of two women in pink dresses dancing on a stadium big screen" loading="lazy" decoding="async" width="1080" height="1350">
-            <figcaption>FOMO, but make it tennis. Username and a sponsor&rsquo;s logo blurred.</figcaption>
-        </figure>
-
-        <p>Mad she didn&rsquo;t get one. Honestly? Same, babe. Same.</p>
-
-        <p>The ball in question is <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">ACE</a>, an air-pulse toy from Hello Nancy, the brand behind that viral lemon. And honestly? Being mistaken for merch is the best review it could have gotten.</p>
-
-        <p>Because the whole point of ACE is that it looks like something you&rsquo;d proudly leave on a shelf. What it does is your business.</p>
-
-        <p>So here&rsquo;s everything you need to know: what ACE actually is, why tennis girls are buying it in pairs, and who it makes the perfect gift for. Spoiler: probably someone in your group chat.</p>
+        <p>Choosing between them is harder than choosing a doubles partner. So we made it easy. Six questions about your Saturdays, your coffee and your texting habits, and you&rsquo;ll know which one is your match.</p>
 
         <!-- ─── CHEAT SHEET ─── -->
         <aside class="cheat-sheet">
             <div class="cheat-sheet__label">The 30-second version</div>
             <ul>
-                <li><strong>What it is:</strong> <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">ACE</a>, an air-pulse toy shaped like a tennis ball. Its teammate, <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">SMASH</a>, is a wand with a tennis-ball head.</li>
-                <li><strong>Price:</strong> ACE is $99 in Tennis Green or $109 in Nancy Pink. SMASH is $129. Both together in the <a href="https://hellonancy.com/products/grand-slam-bundle?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">Grand Slam Bundle</a> is $199.</li>
-                <li><strong>The codes:</strong> ACE25 takes 25% off ACE. SMASH25 does the same for SMASH.</li>
-                <li><strong>Best for:</strong> your partner, your tennis bestie, or you.</li>
-                <li><strong>The vibe:</strong> looks like merch. Is not merch.</li>
+                <li><strong>Team ACE:</strong> air pulses, light touch, no direct contact. <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash" target="_blank" rel="noopener">ACE</a> is $99 in Tennis Green or $109 in Nancy Pink. Code ACE25 takes it to $74.25 or $81.75.</li>
+                <li><strong>Team SMASH:</strong> deep, rumbly vibrations and a flexible tennis-ball head. <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash" target="_blank" rel="noopener">SMASH</a> is $129, or $96.75 with code SMASH25.</li>
+                <li><strong>Can&rsquo;t choose?</strong> The <a href="https://hellonancy.com/products/grand-slam-bundle?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash" target="_blank" rel="noopener">Grand Slam Bundle</a> puts both in one box for $199 ($228 if bought separately). Codes don&rsquo;t apply to the bundle.</li>
+                <li><strong>Both toys:</strong> waterproof and rechargeable.</li>
+                <li><strong>House rules:</strong> answer honestly. Nobody sees your answers but you.</li>
             </ul>
         </aside>
 
-        <!-- ─── WHAT IS IT ─── -->
-        <h2>Wait, so what is it?</h2>
+        <!-- ─── QUIZ ─── -->
+        <h2>The quiz: finesse or power?</h2>
 
-        <p>Let&rsquo;s get the anatomy out of the way. ACE is a palm-sized silicone ball with a tennis-ball seam and one small opening on the side. No handle. Nothing to aim. Nothing that screams &ldquo;toy.&rdquo;</p>
+        <p>Tap one answer per question. Your result appears after number six, along with your final score.</p>
 
-        <p>Instead of vibrating, it uses air. Gentle, rhythmic pulses draw and release over the clitoris, so nothing presses and nothing buzzes against you. Nancy&rsquo;s own description is that it &ldquo;builds slowly, then all at once,&rdquo; and if you&rsquo;ve ever used an air-pulse toy, you know that&rsquo;s not marketing fluff.</p>
+        <div class="quiz" id="quiz" role="region" aria-label="Ace or Smash quiz">
+            <p class="quiz__nojs">This quiz needs JavaScript to keep score. No problem: skip down to <a href="#results-explained">the results, explained</a> and pick your team the old-fashioned way.</p>
+            <div class="quiz__app" hidden>
+                <div class="quiz__head">
+                    <div class="quiz__progress"><span>Question <span data-step>1</span> of 6</span><span>Ace or Smash?</span></div>
+                    <div class="quiz__bar" aria-hidden="true"><span></span></div>
+                </div>
 
-        <figure class="body-figure">
-            <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/Product_4_1.png?width=1024&height=768&crop=center" alt="ACE in Nancy Pink sitting on the corner of a pink tennis court line" loading="lazy" decoding="async" width="1024" height="768">
-            <figcaption>ACE in Nancy Pink. It sits on a baseline better than most of us. Photo: Hello Nancy</figcaption>
-        </figure>
+                <div class="quiz__q" role="group" aria-labelledby="quiz-q1" hidden>
+                    <h3 class="quiz__question" id="quiz-q1" tabindex="-1">Your ideal Saturday at the club?</h3>
+                    <div class="quiz__opts">
+                        <button type="button" class="quiz__opt" data-ace="2" data-smash="0"><span class="quiz__key" aria-hidden="true">A</span><span>An early hit, then a long brunch on the terrace</span></button>
+                        <button type="button" class="quiz__opt" data-ace="0" data-smash="2"><span class="quiz__key" aria-hidden="true">B</span><span>Back-to-back sets until they turn the lights on</span></button>
+                        <button type="button" class="quiz__opt" data-ace="1" data-smash="1"><span class="quiz__key" aria-hidden="true">C</span><span>Doubles with friends, then drinks on the patio</span></button>
+                    </div>
+                </div>
 
-        <p>For the detail girls: <strong>8 modes and 4 patterns</strong>, rechargeable, waterproof, and designed to be quiet. It fits in your palm the way an actual tennis ball does, which makes it very easy to hold exactly where you want it.</p>
+                <div class="quiz__q" role="group" aria-labelledby="quiz-q2" hidden>
+                    <h3 class="quiz__question" id="quiz-q2" tabindex="-1">Pick a tennis outfit.</h3>
+                    <div class="quiz__opts">
+                        <button type="button" class="quiz__opt" data-ace="2" data-smash="0"><span class="quiz__key" aria-hidden="true">A</span><span>Pink pleated skirt, matching visor, tiny socks</span></button>
+                        <button type="button" class="quiz__opt" data-ace="0" data-smash="2"><span class="quiz__key" aria-hidden="true">B</span><span>A bold color-block set that means business</span></button>
+                        <button type="button" class="quiz__opt" data-ace="1" data-smash="1"><span class="quiz__key" aria-hidden="true">C</span><span>Classic whites. Always.</span></button>
+                    </div>
+                </div>
 
-        <div class="pro-tip">
-            <span class="pro-tip__label">Pro tip</span>
-            New to air-pulse? Start on the lowest setting and add a little water-based lube around the opening. The magic is in the seal, not the pressure. Hold it lightly and let the pulses do the work.
+                <div class="quiz__q" role="group" aria-labelledby="quiz-q3" hidden>
+                    <h3 class="quiz__question" id="quiz-q3" tabindex="-1">How do you take your coffee?</h3>
+                    <div class="quiz__opts">
+                        <button type="button" class="quiz__opt" data-ace="2" data-smash="0"><span class="quiz__key" aria-hidden="true">A</span><span>Oat latte, extra foam, sipped very slowly</span></button>
+                        <button type="button" class="quiz__opt" data-ace="0" data-smash="2"><span class="quiz__key" aria-hidden="true">B</span><span>Double espresso, standing up</span></button>
+                        <button type="button" class="quiz__opt" data-ace="1" data-smash="1"><span class="quiz__key" aria-hidden="true">C</span><span>Iced, sweet and in a cute cup</span></button>
+                    </div>
+                </div>
+
+                <div class="quiz__q" role="group" aria-labelledby="quiz-q4" hidden>
+                    <h3 class="quiz__question" id="quiz-q4" tabindex="-1">Your texting style?</h3>
+                    <div class="quiz__opts">
+                        <button type="button" class="quiz__opt" data-ace="2" data-smash="0"><span class="quiz__key" aria-hidden="true">A</span><span>Slow burn. Three dots, a long pause, then the perfect reply.</span></button>
+                        <button type="button" class="quiz__opt" data-ace="0" data-smash="2"><span class="quiz__key" aria-hidden="true">B</span><span>Straight to the point. Why send three texts when one will do?</span></button>
+                    </div>
+                </div>
+
+                <div class="quiz__q" role="group" aria-labelledby="quiz-q5" hidden>
+                    <h3 class="quiz__question" id="quiz-q5" tabindex="-1">On court, you&rsquo;re&hellip;</h3>
+                    <div class="quiz__opts">
+                        <button type="button" class="quiz__opt" data-ace="2" data-smash="0"><span class="quiz__key" aria-hidden="true">A</span><span>A placement player. Angles, drop shots, patience.</span></button>
+                        <button type="button" class="quiz__opt" data-ace="0" data-smash="3"><span class="quiz__key" aria-hidden="true">B</span><span>A big hitter. Why rally when you can end the point?</span></button>
+                        <button type="button" class="quiz__opt" data-ace="1" data-smash="1"><span class="quiz__key" aria-hidden="true">C</span><span>A bit of both, depending on the score</span></button>
+                    </div>
+                </div>
+
+                <div class="quiz__q" role="group" aria-labelledby="quiz-q6" hidden>
+                    <h3 class="quiz__question" id="quiz-q6" tabindex="-1">How do you feel about &ldquo;quiet&rdquo;?</h3>
+                    <div class="quiz__opts">
+                        <button type="button" class="quiz__opt" data-ace="2" data-smash="0"><span class="quiz__key" aria-hidden="true">A</span><span>Quiet is my love language</span></button>
+                        <button type="button" class="quiz__opt" data-ace="0" data-smash="2"><span class="quiz__key" aria-hidden="true">B</span><span>Quiet is overrated. Bring on the rumble.</span></button>
+                        <button type="button" class="quiz__opt" data-ace="1" data-smash="1"><span class="quiz__key" aria-hidden="true">C</span><span>Quiet when it counts, loud when it doesn&rsquo;t</span></button>
+                    </div>
+                </div>
+
+                <div class="quiz__result" data-result="ace" hidden>
+                    <figure>
+                        <img src="/ace-or-smash/img/team-ace.jpg" alt="Graphic reading Team ACE, The finesse player, with ACE in Nancy Pink on a blush pink background" width="1200" height="1000" loading="lazy" decoding="async">
+                        <figcaption>Finesse, in pink. Photo: Hello Nancy</figcaption>
+                    </figure>
+                    <div class="quiz__eyebrow">Your result</div>
+                    <h3 class="quiz__result-title" tabindex="-1">Team ACE</h3>
+                    <p>You&rsquo;re a finesse player. You like a slow build, a little mystery and a reply worth waiting for. ACE is your match: air pulses instead of vibration, no direct contact, and a feel Nancy says &ldquo;builds slowly, then all at once.&rdquo;</p>
+                    <p class="quiz__price"><strong>$99</strong> Tennis Green or <strong>$109</strong> Nancy Pink. Code <span class="quiz__code">ACE25</span> takes 25% off: $74.25 or $81.75.</p>
+                    <p class="quiz__score" data-score></p>
+                    <div class="quiz__actions">
+                        <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=quiz_result_ace" target="_blank" rel="noopener" class="buy-now-btn">Shop ACE with ACE25</a>
+                        <button type="button" class="quiz__retake">Retake the quiz</button>
+                    </div>
+                </div>
+
+                <div class="quiz__result" data-result="smash" hidden>
+                    <figure>
+                        <img src="/ace-or-smash/img/team-smash.jpg" alt="Graphic reading Team SMASH, The power hitter, with the SMASH wand and its tennis-ball head on a dark court green background" width="1200" height="1000" loading="lazy" decoding="async">
+                        <figcaption>Power, with a tennis-ball head. Photo: Hello Nancy</figcaption>
+                    </figure>
+                    <div class="quiz__eyebrow">Your result</div>
+                    <h3 class="quiz__result-title" tabindex="-1">Team SMASH</h3>
+                    <p>You&rsquo;re a power hitter. You know what you want, and you&rsquo;d rather end the point than rally for it. SMASH is your match: a full-body wand with deep, rumbly vibrations and a flexible tennis-ball head that goes where you want it.</p>
+                    <p class="quiz__price"><strong>$129</strong>, or <strong>$96.75</strong> with code <span class="quiz__code">SMASH25</span>.</p>
+                    <p class="quiz__score" data-score></p>
+                    <div class="quiz__actions">
+                        <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=quiz_result_smash" target="_blank" rel="noopener" class="buy-now-btn">Shop SMASH with SMASH25</a>
+                        <button type="button" class="quiz__retake">Retake the quiz</button>
+                    </div>
+                </div>
+
+                <div class="quiz__result" data-result="slam" hidden>
+                    <figure>
+                        <img src="/ace-or-smash/img/grand-slam.jpg" alt="Graphic reading Grand Slam, You want both. Obviously., with ACE in Tennis Green and the SMASH wand on a bright tennis-ball green background" width="1200" height="1000" loading="lazy" decoding="async">
+                        <figcaption>Why choose? Photo: Hello Nancy</figcaption>
+                    </figure>
+                    <div class="quiz__eyebrow">Your result</div>
+                    <h3 class="quiz__result-title" tabindex="-1">Grand Slam</h3>
+                    <p>Dead even, or close enough. You&rsquo;re finesse on Tuesdays and power on Saturdays, and you refuse to pick a side. The Grand Slam Bundle puts ACE and SMASH in one box: the light touch and the full swing, finally playing doubles.</p>
+                    <p class="quiz__price"><strong>$199</strong> for both ($228 if bought separately). Codes don&rsquo;t apply to the bundle.</p>
+                    <p class="quiz__score" data-score></p>
+                    <div class="quiz__actions">
+                        <a href="https://hellonancy.com/products/grand-slam-bundle?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=quiz_result_bundle" target="_blank" rel="noopener" class="buy-now-btn">Shop the Grand Slam Bundle</a>
+                        <button type="button" class="quiz__retake">Retake the quiz</button>
+                    </div>
+                </div>
+            </div>
         </div>
 
-        <p>Fun fact: in tennis, an ace is the serve your opponent never even touches. Which is a pretty perfect name for a toy that works without direct contact. Somebody in Nancy&rsquo;s naming meeting deserves a raise. <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">See ACE in both colors here.</a></p>
+        <script>
+        (function(){
+          var quiz = document.getElementById('quiz');
+          if (!quiz || !quiz.querySelector || !Element.prototype.closest) return;
+          var app = quiz.querySelector('.quiz__app');
+          var nojs = quiz.querySelector('.quiz__nojs');
+          var head = quiz.querySelector('.quiz__head');
+          var step = quiz.querySelector('[data-step]');
+          var bar = quiz.querySelector('.quiz__bar span');
+          var qs = quiz.querySelectorAll('.quiz__q');
+          var rs = quiz.querySelectorAll('.quiz__result');
+          var total = qs.length, cur = 0, ace = 0, smash = 0;
+          function each(list, fn){ for (var k = 0; k < list.length; k++) fn(list[k], k); }
+          function showQ(n, focus){
+            each(qs, function(q, k){ q.hidden = (k !== n); });
+            step.textContent = String(n + 1);
+            bar.style.width = Math.round(n / total * 100) + '%';
+            if (focus) { var h = qs[n].querySelector('.quiz__question'); if (h) h.focus(); }
+          }
+          function finish(){
+            each(qs, function(q){ q.hidden = true; });
+            head.hidden = true;
+            var d = smash - ace;
+            var key = Math.abs(d) <= 1 ? 'slam' : (d > 1 ? 'smash' : 'ace');
+            var shown = null;
+            each(rs, function(r){ var on = r.getAttribute('data-result') === key; r.hidden = !on; if (on) shown = r; });
+            if (!shown) return;
+            var sc = shown.querySelector('[data-score]');
+            if (sc) sc.textContent = 'Final score: SMASH ' + smash + ', ACE ' + ace + '.';
+            var t = shown.querySelector('.quiz__result-title');
+            if (t) { try { t.focus({ preventScroll: true }); } catch (err) { t.focus(); } }
+            if (shown.scrollIntoView) shown.scrollIntoView({ block: 'start' });
+          }
+          function reset(){
+            cur = 0; ace = 0; smash = 0;
+            each(rs, function(r){ r.hidden = true; });
+            head.hidden = false;
+            showQ(0, true);
+          }
+          quiz.addEventListener('click', function(e){
+            var opt = e.target.closest('.quiz__opt');
+            if (opt) {
+              ace += parseInt(opt.getAttribute('data-ace'), 10) || 0;
+              smash += parseInt(opt.getAttribute('data-smash'), 10) || 0;
+              cur += 1;
+              if (cur < total) { showQ(cur, true); } else { finish(); }
+              return;
+            }
+            if (e.target.closest('.quiz__retake')) reset();
+          });
+          if (nojs) nojs.hidden = true;
+          app.hidden = false;
+          showQ(0, false);
+        })();
+        </script>
 
-        <!-- ─── WHY TENNIS GIRLS ─── -->
-        <h2>Why tennis girls are obsessed</h2>
+        <!-- ─── RESULTS EXPLAINED ─── -->
+        <h2 id="results-explained">The results, explained</h2>
 
-        <p>Tennis stopped being just a sport a while ago. It&rsquo;s an aesthetic, a personality, and for a lot of us, the main group-chat activity.</p>
+        <p>Already took it? Here&rsquo;s what your result means. Skipped straight here? Respect. That&rsquo;s very Team SMASH of you.</p>
 
-        <p>More than 27 million Americans played last year, and women drove a big chunk of the growth: about 1.1 million new players in a single year, according to the USTA&rsquo;s latest participation report.</p>
+        <h3>Team ACE: the finesse player</h3>
+
+        <p>You like a slow build. You&rsquo;d rather place the perfect shot than blast it, you notice details, and you think a good reply is worth waiting for.</p>
+
+        <p>Your match is <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=explained_ace" target="_blank" rel="noopener">ACE</a>. It looks like a tennis ball and fits in your palm like one: soft silicone, no handle, nothing to aim. Instead of vibrating, it uses rhythmic air pulses that draw and release. In Nancy&rsquo;s words: &ldquo;Nothing presses, nothing buzzes.&rdquo; It &ldquo;builds slowly, then all at once.&rdquo;</p>
+
+        <p>It has 8 modes and 4 patterns, and it&rsquo;s rechargeable, waterproof and quiet. <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=explained_ace_price" target="_blank" rel="noopener">ACE is $99 in Tennis Green or $109 in Nancy Pink</a>, and code ACE25 takes 25% off.</p>
 
         <figure class="body-figure">
-            <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/5_6ffa5010-ad4c-48b1-b52d-3067e88b637d.png?width=1024&height=768&crop=center" alt="A woman in a pink tennis dress crouching on a pink court with tennis balls and ACE toys scattered around her" loading="lazy" decoding="async" width="1024" height="768">
-            <figcaption>Can you tell which balls are for practice? Photo: Hello Nancy</figcaption>
+            <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/Untitleddesign_4_34bd96cc-0288-4fdd-8fd9-f75d8b4fb9d8.png?width=1024&height=768&crop=center" alt="Two hands holding ACE in Nancy Pink and Tennis Green over a pink pleated skirt, one wrist wearing a Nancy wristband" loading="lazy" decoding="async" width="1024" height="768">
+            <figcaption>Team ACE comes in two colors. Honestly the hardest question on this page. Photo: Hello Nancy</figcaption>
         </figure>
 
-        <p>And where there&rsquo;s an aesthetic, there&rsquo;s merch. The pleated skirts. The plush tennis balls clipped to every tote. The fashion houses selling $500 leather cases for, yes, tennis balls. Tennis girls collect tennis things. It&rsquo;s basically the law.</p>
+        <h3>Team SMASH: the power hitter</h3>
 
-        <p>Which is exactly why ACE works. It plugs straight into that collector brain. The Tennis Green looks like it rolled off a court. The Nancy Pink looks like it rolled off a mood board. When the pink sold out less than two weeks after launch, people stopped choosing and started buying <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">both colors</a>.</p>
+        <p>You know what you want, and you&rsquo;d rather end the point than rally for it. Subtle is fine. Decisive is better.</p>
+
+        <p>Your match is <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=explained_smash" target="_blank" rel="noopener">SMASH</a>, Nancy&rsquo;s full-body wand. It delivers what Nancy calls &ldquo;deep, rumbly vibrations&rdquo; through a flexible head shaped like a tennis ball, so it goes exactly where you want it. The handle has &ldquo;a grip built for long rallies,&rdquo; and it&rsquo;s waterproof and rechargeable.</p>
+
+        <p>Nancy calls it &ldquo;the most powerful shot in tennis, now in your nightstand.&rdquo; Big talk for a nightstand. <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=explained_smash_price" target="_blank" rel="noopener">SMASH is $129, or $96.75 with code SMASH25</a>.</p>
 
         <figure class="body-figure">
-            <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/7_806dfdfd-a653-49d4-80ed-137b37220ce4.png?width=1024&height=768&crop=center" alt="A silver trophy bowl overflowing with pink tennis balls, with ACE boxes in pink and green stripes in front" loading="lazy" decoding="async" width="1024" height="768">
-            <figcaption>Collector&rsquo;s-edition energy. The boxes are half the fun. Photo: Hello Nancy</figcaption>
+            <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/Tennis_wand_14.png?width=1024&height=768&crop=center" alt="SMASH wand inside its open striped box, with the words Welcome to Center Court printed inside" loading="lazy" decoding="async" width="1024" height="768">
+            <figcaption>The SMASH box opens to &ldquo;Welcome to Center Court.&rdquo; Power hitters love an entrance. Photo: Hello Nancy</figcaption>
         </figure>
 
-        <p>Then there&rsquo;s the subtext. Tennis has always been a little bit sexy. The sweat. The grunting. The tiny skirts. The rivalries that feel very personal. A certain 2024 movie with a very memorable churro scene basically turned a tennis match into a three-way, and the internet still hasn&rsquo;t recovered.</p>
+        <h3>Grand Slam: you want both (obviously)</h3>
 
-        <p>ACE is just the first thing to say the quiet part out loud.</p>
+        <p>Your answers landed right on the line. You&rsquo;re a slow-burn texter who orders a double espresso. A placement player with big-hitter days. You contain multitudes, and your nightstand should too.</p>
 
-        <div class="pull-quote">It&rsquo;s the most collectible thing in tennis right now. It is not for the court.</div>
+        <p>The <a href="https://hellonancy.com/products/grand-slam-bundle?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=explained_bundle" target="_blank" rel="noopener">Grand Slam Bundle</a> puts ACE and SMASH in one box for $199, versus $228 if you bought them separately. Nancy&rsquo;s pitch: &ldquo;Ace and Smash, finally playing doubles.&rdquo; ACE handles the light touch with no direct contact, SMASH takes the full swing, and &ldquo;Both whisper quiet, waterproof, and rechargeable.&rdquo;</p>
 
-        <!-- ─── WHY PEOPLE BUY ─── -->
-        <h2>The real reason people are buying it</h2>
+        <p>One note: codes don&rsquo;t apply to the bundle. It&rsquo;s $199, full stop.</p>
 
-        <p>Here&rsquo;s the part I didn&rsquo;t expect. Nancy asks buyers why they picked their toy right after checkout, and more than 500 ACE and SMASH buyers have answered so far.</p>
+        <figure class="body-figure">
+            <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/WhatsAppImage2026-09-03at3.17.28PM.jpg?width=1024&height=768&crop=center" alt="SMASH wand and ACE in Tennis Green and Nancy Pink lying together on a pink pleated tennis skirt" loading="lazy" decoding="async" width="1024" height="768">
+            <figcaption>The full doubles lineup, warming up on a pleated skirt. Photo: Hello Nancy</figcaption>
+        </figure>
 
-        <p>The number one reason wasn&rsquo;t power. It wasn&rsquo;t the tech. It wasn&rsquo;t even the price. It was the design.</p>
+        <div class="pull-quote">Finesse or power? The correct answer is yes.</div>
+
+        <!-- ─── WHY TENNIS ─── -->
+        <h2>Why tennis makes the perfect personality test</h2>
+
+        <p>Tennis has a vocabulary that sounds like it was written for the bedroom. Nancy simply noticed first.</p>
+
+        <p>An <strong>ace</strong> is a serve your opponent never touches, which is a pretty perfect name for a toy that works with no direct contact. A <strong>smash</strong> is the overhead power shot that ends the point. Also a perfect name. And <strong>love</strong> means zero, which explains a lot about dating.</p>
+
+        <p>Then there&rsquo;s the culture. More than 27 million Americans played tennis in 2025, and women added about 1.1 million new players in a single year, according to the USTA&rsquo;s participation report. Add the pleated skirts, the &ldquo;Serving 35&rdquo; birthday invitations and bachelorette slogans like &ldquo;She Found Her Match,&rdquo; and tennis is basically a personality now.</p>
+
+        <p>On TikTok, couples call using these toys &ldquo;playing tennis&rdquo; (plenty of the creators saying it are Nancy&rsquo;s own paid partners, for the record). One husband&rsquo;s &ldquo;morning routine&rdquo; video passed a million views. Nobody asked him whether he&rsquo;s a finesse player or a power hitter. We have theories.</p>
+
+        <!-- ─── WHAT BUYERS PICK ─── -->
+        <h2>What buyers actually pick (and why)</h2>
+
+        <p>Nancy asks buyers why they chose <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash" target="_blank" rel="noopener">ACE</a> or <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash" target="_blank" rel="noopener">SMASH</a> right after checkout. The top answer wasn&rsquo;t power. It wasn&rsquo;t speed. It was the design.</p>
 
         <div class="stat-bars" role="figure" aria-label="Why ACE and SMASH buyers chose them">
             <div class="stat-bars__label">Why buyers chose ACE and SMASH (pick all that apply)</div>
@@ -983,92 +1160,42 @@
             <div class="stat-row"><span class="stat-row__name">Quiet and discreet</span><span class="stat-row__bar"><span style="width:44%"></span></span><span class="stat-row__val">44%</span></div>
             <div class="stat-row"><span class="stat-row__name">Easy to use</span><span class="stat-row__bar"><span style="width:35%"></span></span><span class="stat-row__val">35%</span></div>
             <div class="stat-row"><span class="stat-row__name">Waterproof</span><span class="stat-row__bar"><span style="width:33%"></span></span><span class="stat-row__val">33%</span></div>
-            <div class="stat-row"><span class="stat-row__name">Partner-approved</span><span class="stat-row__bar"><span style="width:18%"></span></span><span class="stat-row__val">18%</span></div>
             <div class="stat-bars__source">Source: Nancy post-purchase survey, 532 ACE and SMASH buyers, Aug 26 to Oct 2, 2026.</div>
         </div>
 
-        <p>And then this: <strong>37% said they were buying it for their partner.</strong></p>
+        <p>And <strong>37% said they bought it for a partner</strong>, so if your quiz result is secretly a gift idea, you&rsquo;re in good company. One more: in an earlier Nancy buyer survey, about 9 in 10 ACE and SMASH buyers already owned at least one toy.</p>
 
-        <p>Read that again. More than a third of the people buying a tennis-ball toy are buying it for someone else. Which makes ACE less of an impulse buy and more of a gift. A very, very good one.</p>
+        <!-- ─── PRODUCT CARDS ─── -->
+        <h2>Meet the players</h2>
 
-        <p>Which brings us to the fun part.</p>
-
-        <!-- ─── GIFT GUIDE ─── -->
-        <h2>Who to gift it to (and what to write on the card)</h2>
-
-        <p>Tennis gifts are a whole genre. The candle that smells like a fresh can of balls. The novelty socks. The tennis bracelet, if you&rsquo;re feeling generous. ACE beats all of them on one key metric: she&rsquo;ll actually use it.</p>
-
-        <div class="gift-grid">
-            <div class="gift-card">
-                <div class="gift-card__for">For your partner</div>
-                <h3 class="gift-card__title">The gift that won&rsquo;t make it weird</h3>
-                <p>Never bought your partner a toy? Start here. It&rsquo;s cute, it&rsquo;s not intimidating, and it opens like a tennis present. She&rsquo;ll laugh first. Then she&rsquo;ll thank you.</p>
-                <div class="gift-card__pick"><strong>The pick:</strong> <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch&utm_content=gift_partner" target="_blank" rel="noopener">ACE in Nancy Pink, $109</a></div>
-                <div class="gift-card__note">Write on the card: &ldquo;Advantage: you.&rdquo;</div>
-            </div>
-            <div class="gift-card">
-                <div class="gift-card__for">For the two of you</div>
-                <h3 class="gift-card__title">Mixed doubles</h3>
-                <p>The Grand Slam Bundle puts ACE and SMASH in one box. ACE for the light touch, SMASH for the full swing. One gift, two very happy people.</p>
-                <div class="gift-card__pick"><strong>The pick:</strong> <a href="https://hellonancy.com/products/grand-slam-bundle?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch&utm_content=gift_couple" target="_blank" rel="noopener">Grand Slam Bundle, $199</a> ($228 if bought separately)</div>
-                <div class="gift-card__note">Write on the card: &ldquo;Game. Set. Match.&rdquo;</div>
-            </div>
-            <div class="gift-card">
-                <div class="gift-card__for">For your tennis bestie</div>
-                <h3 class="gift-card__title">Love all</h3>
-                <p>For the friend who turned her 35th into a tennis-club party, or the bride who&rsquo;s about to retire from singles. Split it four ways and it&rsquo;s about $25 each, less than that plush ball on her tote.</p>
-                <div class="gift-card__pick"><strong>The pick:</strong> <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch&utm_content=gift_bestie" target="_blank" rel="noopener">ACE in Tennis Green, $99</a></div>
-                <div class="gift-card__note">Write on the card: &ldquo;Your last singles match.&rdquo;</div>
-            </div>
-            <div class="gift-card">
-                <div class="gift-card__for">For the tennis obsessive (or you)</div>
-                <h3 class="gift-card__title">They have every tennis ball. Except this one.</h3>
-                <p>They already own the socks, the candle and three rackets. They do not own a wand with a tennis-ball head. Fix that.</p>
-                <div class="gift-card__pick"><strong>The pick:</strong> <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch&utm_content=gift_fan" target="_blank" rel="noopener">SMASH, $129</a></div>
-                <div class="gift-card__note">Write on the card: &ldquo;New balls, please.&rdquo;</div>
-            </div>
-        </div>
-
-        <figure class="body-figure">
-            <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/3_9d510629-7abf-421e-9ed3-5142d842611d.png?width=1024&height=768&crop=center" alt="Two ACE boxes, one pink-striped and one green-striped, on a white courtside bench" loading="lazy" decoding="async" width="1024" height="768">
-            <figcaption>Both colors come in striped boxes that are genuinely worth unwrapping. Photo: Hello Nancy</figcaption>
-        </figure>
-
-        <div class="real-talk">
-            <span class="real-talk__label">Gifting it? Read this</span>
-            Want it to arrive in a box that gives absolutely nothing away? Add Nancy&rsquo;s <strong>Extra Discreet Packaging</strong> at checkout ($3.99) for a plain, unmarked box. And if it&rsquo;s a holiday gift, order early: Nancy quotes up to 10 days of order prep before it ships.
-        </div>
-
-        <!-- ─── PRODUCT CARD: ACE ─── -->
         <div class="product-card">
-            <div class="product-card__eyebrow">The one everyone thought was merch</div>
-            <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/Untitleddesign_4_34bd96cc-0288-4fdd-8fd9-f75d8b4fb9d8.png?width=600" alt="Hands holding ACE in Nancy Pink and Tennis Green" loading="lazy" decoding="async" width="600" height="600">
+            <div class="product-card__eyebrow">For the power hitters</div>
+            <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/WhatsAppImage2026-09-04at2.55.04PM.jpg?width=600" alt="SMASH wand vibrator lying on a pink tennis court line" loading="lazy" decoding="async" width="600" height="600">
+            <div class="product-card__name">Hello Nancy SMASH<br>Wand Vibrator</div>
+            <div class="product-card__price"><strong>$129</strong><br>$96.75 with code SMASH25</div>
+            <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=card_smash" target="_blank" rel="noopener" class="buy-now-btn">Shop SMASH at Hello Nancy</a>
+            <div class="product-gallery">
+                <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/Tenniswand_13_3dd439d1-aea8-4e63-8953-ce61332804a3.png?width=400" alt="SMASH leaning against a tennis net on a clay court" loading="lazy" decoding="async" width="400" height="400">
+                <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/Tenniswand_16.png?width=400" alt="SMASH in its green striped box" loading="lazy" decoding="async" width="400" height="400">
+                <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/Tennis_wand_14.png?width=400" alt="SMASH in its open box reading Welcome to Center Court" loading="lazy" decoding="async" width="400" height="400">
+            </div>
+        </div>
+
+        <div class="product-card">
+            <div class="product-card__eyebrow">For the finesse players</div>
+            <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/Product_4_1.png?width=600" alt="ACE in Nancy Pink sitting on the corner of a pink tennis court line" loading="lazy" decoding="async" width="600" height="600">
             <div class="product-card__name">Hello Nancy ACE<br>Air Suction Massager</div>
             <div class="product-card__price"><strong>$99</strong> Tennis Green &nbsp;&middot;&nbsp; <strong>$109</strong> Nancy Pink<br>25% off with code ACE25</div>
-            <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch&utm_content=card_ace" target="_blank" rel="noopener" class="buy-now-btn">Shop ACE at Hello Nancy</a>
+            <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=card_ace" target="_blank" rel="noopener" class="buy-now-btn">Shop ACE at Hello Nancy</a>
             <div class="product-gallery">
-                <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/pink.webp?width=400" alt="ACE in Nancy Pink held in one hand" loading="lazy" decoding="async" width="400" height="400">
-                <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/WhatsAppImage2026-09-20at6.59.31PM.jpg?width=400" alt="ACE in both colors next to a pink tennis ball" loading="lazy" decoding="async" width="400" height="400">
-                <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/3_9d510629-7abf-421e-9ed3-5142d842611d.png?width=400" alt="ACE boxes on a courtside bench" loading="lazy" decoding="async" width="400" height="400">
+                <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/pink.webp?width=400" alt="ACE in Nancy Pink held in one hand against a pink skirt" loading="lazy" decoding="async" width="400" height="400">
+                <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/WhatsAppImage2026-09-20at6.59.31PM.jpg?width=400" alt="ACE in both colors next to a pink felt tennis ball on a clay court" loading="lazy" decoding="async" width="400" height="400">
+                <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/3_9d510629-7abf-421e-9ed3-5142d842611d.png?width=400" alt="Striped ACE boxes in pink and green on a courtside bench" loading="lazy" decoding="async" width="400" height="400">
             </div>
         </div>
 
-        <!-- ─── SMASH ─── -->
-        <h2>Meet the rest of the team: SMASH</h2>
-
-        <p>If ACE is the finesse player, <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">SMASH</a> is the power hitter. It&rsquo;s a full-size wand with a tennis-ball head on a flexible neck, and Nancy describes the vibrations as &ldquo;deep&rdquo; and &ldquo;rumbly.&rdquo; Accurate.</p>
-
-        <p>Where ACE is all about air and a light touch, SMASH is broad, buzzy pressure you can put anywhere you like. Solo, partnered, mid-rally. No judgment.</p>
-
-        <figure class="body-figure">
-            <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/Tennis_wand_14.png?width=1024&height=768&crop=center" alt="SMASH wand inside its open green and yellow striped box that reads Welcome to Center Court" loading="lazy" decoding="async" width="1024" height="768">
-            <figcaption>The SMASH box literally says &ldquo;Welcome to Center Court&rdquo; when you open it. The packaging team is having a great year. Photo: Hello Nancy</figcaption>
-        </figure>
-
-        <p>It&rsquo;s waterproof, it&rsquo;s rechargeable, and it&rsquo;s the one to pick if the person you&rsquo;re buying for already owns an air-pulse toy and wants something with a little more swing. Pair it with ACE and you&rsquo;ve got the <a href="https://hellonancy.com/products/grand-slam-bundle?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">full doubles team</a>.</p>
-
         <!-- ─── COMPARISON ─── -->
-        <h2>ACE vs. SMASH vs. both</h2>
+        <h2>ACE vs. SMASH vs. the Grand Slam Bundle</h2>
 
         <div class="compare-wrap">
             <table class="compare">
@@ -1076,51 +1203,67 @@
                     <tr><th></th><th>ACE</th><th>SMASH</th><th>Grand Slam Bundle</th></tr>
                 </thead>
                 <tbody>
-                    <tr><td>The feel</td><td>Air pulses, no direct contact</td><td>Deep, rumbly vibration</td><td>Both</td></tr>
-                    <tr><td>Best for</td><td>First-timers, light touch, gifting</td><td>Power lovers, couples</td><td>Collectors, couples, big gifts</td></tr>
-                    <tr><td>Looks like</td><td>A tennis ball</td><td>A wand with a tennis-ball head</td><td>A very fun box</td></tr>
-                    <tr><td>Price</td><td>$99 green / $109 pink</td><td>$129</td><td>$199</td></tr>
-                    <tr><td>With code</td><td>$74.25 / $81.75 (ACE25)</td><td>$96.75 (SMASH25)</td><td>Bundle price</td></tr>
+                    <tr><td>Plays like</td><td>The finesse player</td><td>The power hitter</td><td>Mixed doubles</td></tr>
+                    <tr><td>The feel</td><td>Air pulses that draw and release, no direct contact</td><td>Deep, rumbly vibrations</td><td>Both, depending on the night</td></tr>
+                    <tr><td>Looks like</td><td>A tennis ball that fits in your palm</td><td>A wand with a flexible tennis-ball head</td><td>Both, in one box</td></tr>
+                    <tr><td>Details</td><td>8 modes, 4 patterns</td><td>&ldquo;A grip built for long rallies&rdquo;</td><td>Both toys</td></tr>
+                    <tr><td>Waterproof</td><td>Yes</td><td>Yes</td><td>Yes, both</td></tr>
+                    <tr><td>Price</td><td>$99 green / $109 pink</td><td>$129</td><td>$199 ($228 separately)</td></tr>
+                    <tr><td>With code</td><td>$74.25 / $81.75 (ACE25)</td><td>$96.75 (SMASH25)</td><td>Codes don&rsquo;t apply</td></tr>
                 </tbody>
             </table>
         </div>
 
         <div class="inline-cta">
-            <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch&utm_content=mid_cta" target="_blank" rel="noopener" class="buy-now-btn">Get ACE for $74.25 with ACE25</a>
+            <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=mid_cta" target="_blank" rel="noopener" class="buy-now-btn">Get SMASH for $96.75 with SMASH25</a>
         </div>
 
-        <!-- ─── SOCIAL ─── -->
-        <h2>What people are actually saying</h2>
+        <p>Rather play both sides of the court? <a href="https://hellonancy.com/products/grand-slam-bundle?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=after_compare" target="_blank" rel="noopener">Get ACE and SMASH together in the Grand Slam Bundle for $199</a>.</p>
 
-        <p>On TikTok, couples (and, full disclosure, plenty of Nancy&rsquo;s own creator partners) have started calling it &ldquo;playing tennis,&rdquo; as in, &ldquo;we&rsquo;re playing tennis tonight.&rdquo; One husband&rsquo;s suspiciously enthusiastic new &ldquo;morning routine&rdquo; has racked up more than a million views.</p>
+        <!-- ─── REVIEWS ─── -->
+        <h2>What buyers are saying</h2>
 
-        <p>The reviews on Nancy&rsquo;s site are a little more to the point.</p>
+        <p>The reviews on Nancy&rsquo;s site read like match reports.</p>
 
         <div class="user-reviews">
             <div class="user-review">
+                &ldquo;Wife loved it. She likes it served up hard and fast and the SMASH delivered a couple of ACES!&rdquo;
+                <span class="user-review__attr">Verified buyer &bull; hellonancy.com &bull; September 2026</span>
+            </div>
+            <div class="user-review">
                 &ldquo;Today we had our first game/match. Ace won 😉&rdquo;
+                <span class="user-review__attr">Verified buyer &bull; hellonancy.com &bull; September 2026</span>
+            </div>
+            <div class="user-review">
+                &ldquo;We like the rumbly vibrations and the multiple modes is a plus. The weight is a little on the heavy side but we understand that this is a quality product.&rdquo;
                 <span class="user-review__attr">Verified buyer &bull; hellonancy.com &bull; September 2026</span>
             </div>
             <div class="user-review">
                 &ldquo;Perfect size, speed and gentle on the body.&rdquo;
                 <span class="user-review__attr">Verified buyer &bull; hellonancy.com &bull; September 2026</span>
             </div>
+            <div class="user-review">
+                &ldquo;oh my god i LOVEEE all of the nancy toys but this is by far my favorite&rdquo;
+                <span class="user-review__attr">Verified buyer &bull; hellonancy.com &bull; September 2026</span>
+            </div>
         </div>
 
-        <figure class="body-figure">
-            <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/WhatsAppImage2026-09-03at3.17.28PM.jpg?width=1024&height=768&crop=center" alt="SMASH wand and ACE in both colors resting on a pink pleated tennis skirt" loading="lazy" decoding="async" width="1024" height="768">
-            <figcaption>The full set. Pleated skirt not included. Photo: Hello Nancy</figcaption>
-        </figure>
+        <p>Note the honest one about weight. SMASH is a full-size wand, and one buyer found it a little on the heavy side. If you want something that disappears into your palm, that&rsquo;s <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=reviews" target="_blank" rel="noopener">ACE&rsquo;s whole thing</a>.</p>
+
+        <div class="pro-tip">
+            <span class="pro-tip__label">Pro tip, whichever team you&rsquo;re on</span>
+            Start on the lowest setting and work your way up. With ACE, hold it lightly and let the air pulses do the work. With SMASH, let the flexible head do the aiming.
+        </div>
 
         <!-- ─── FINE PRINT ─── -->
-        <h2>The fine print (aka the stuff you actually care about)</h2>
+        <h2>The fine print</h2>
 
         <ul class="fine-print">
-            <li><strong>Price:</strong> <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">ACE</a> $99 (Tennis Green) or $109 (Nancy Pink). <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">SMASH</a> $129. <a href="https://hellonancy.com/products/grand-slam-bundle?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">Grand Slam Bundle</a> $199.</li>
-            <li><strong>Codes:</strong> ACE25 for 25% off ACE, SMASH25 for 25% off SMASH. Codes apply to each product on its own, not the bundle.</li>
-            <li><strong>Returns:</strong> Unopened within 30 days gets a full refund or exchange. Opened? Nancy&rsquo;s one-time Pleasure Guarantee lets you swap it for a different product or store credit.</li>
-            <li><strong>Discretion:</strong> Add Extra Discreet Packaging ($3.99) at checkout for a plain, unmarked box.</li>
-            <li><strong>Specs:</strong> ACE has 8 modes and 4 patterns. Both toys are rechargeable and waterproof.</li>
+            <li><strong>Price:</strong> <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash" target="_blank" rel="noopener">ACE</a> $99 (Tennis Green) or $109 (Nancy Pink). <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash" target="_blank" rel="noopener">SMASH</a> $129. <a href="https://hellonancy.com/products/grand-slam-bundle?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash" target="_blank" rel="noopener">Grand Slam Bundle</a> $199 ($228 if bought separately).</li>
+            <li><strong>Codes:</strong> ACE25 takes 25% off ACE only. SMASH25 takes 25% off SMASH only. Neither applies to the bundle.</li>
+            <li><strong>Returns:</strong> Unopened within 30 days: full refund or exchange. Opened: Nancy&rsquo;s one-time Pleasure Guarantee, which means an exchange for a different product or store credit.</li>
+            <li><strong>Discretion:</strong> Extra Discreet Packaging is a $3.99 add-on at checkout for a plain, unmarked box. It isn&rsquo;t the default, so add it if you want it.</li>
+            <li><strong>Specs:</strong> ACE has 8 modes and 4 patterns. Both toys are waterproof and rechargeable.</li>
         </ul>
 
         <!-- ─── FAQ ─── -->
@@ -1128,57 +1271,63 @@
 
         <div class="faq">
             <details>
-                <summary>Will anyone know what it is?</summary>
-                <p>Judging by the fan who thought it was free merch, no. It looks like a tennis ball. Leave it on your nightstand, your shelf, your desk. Maybe not your actual tennis bag.</p>
+                <summary>I got Grand Slam. Did I break the quiz?</summary>
+                <p>Nope. It means your answers split almost evenly between finesse and power. The Grand Slam Bundle covers both for $199 ($228 if bought separately).</p>
             </details>
             <details>
-                <summary>Is it good for beginners?</summary>
-                <p>Yes. Air-pulse is one of the gentlest ways in, and ACE starts low. &ldquo;Easy to use&rdquo; was one of the top reasons buyers gave for picking it.</p>
+                <summary>Which one is better for beginners?</summary>
+                <p>ACE is the gentler way in: no handle, nothing to aim and no direct contact. SMASH is for when you already know you like power. &ldquo;Easy to use&rdquo; was one of the top reasons buyers gave for choosing either one.</p>
             </details>
             <details>
-                <summary>Is it loud?</summary>
-                <p>It&rsquo;s designed to be quiet, and &ldquo;quiet and discreet&rdquo; was the second most popular reason people bought it. Like any air-pulse toy, it gets a little louder at the top settings.</p>
+                <summary>Are they loud?</summary>
+                <p>Nancy describes both as whisper quiet, and &ldquo;quiet and discreet&rdquo; was the second most picked reason in its buyer survey, at 44%.</p>
             </details>
             <details>
-                <summary>Can I use it in the shower?</summary>
-                <p>Yes. Nancy lists both ACE and SMASH as waterproof.</p>
+                <summary>Can I use them in the shower?</summary>
+                <p>Yes. ACE and SMASH are both waterproof, and both are rechargeable.</p>
             </details>
             <details>
-                <summary>Which color should I get?</summary>
-                <p>Tennis Green if she lives at the club. Nancy Pink if she lives on Pinterest. Both if she&rsquo;s a collector.</p>
+                <summary>Do the codes work on the bundle?</summary>
+                <p>No. ACE25 takes 25% off ACE and SMASH25 takes 25% off SMASH. The Grand Slam Bundle is $199 on its own.</p>
+            </details>
+            <details>
+                <summary>What if I pick the wrong team?</summary>
+                <p>Unopened within 30 days, you get a full refund or exchange. Opened, Nancy&rsquo;s one-time Pleasure Guarantee lets you exchange it for a different product or store credit. So you can switch sides. Once.</p>
             </details>
             <details>
                 <summary>Is Nancy affiliated with a tennis tournament?</summary>
-                <p>Nope. Nancy isn&rsquo;t affiliated with any tournament, league or player. It&rsquo;s just a very convincing tennis ball.</p>
+                <p>No. Nancy isn&rsquo;t affiliated with any tournament, league, governing body or player. It just really likes the vocabulary.</p>
             </details>
         </div>
 
         <!-- ─── VERDICT ─── -->
         <div class="verdict-box">
             <span class="verdict-box__label">The verdict</span>
-            <h2>It earned the confusion</h2>
-            <p>ACE is the rare toy that works as well as a gift as it does as a toy. It&rsquo;s cute enough to leave out, simple enough for a first-timer, and fun enough to take the awkward out of giving someone a vibrator.</p>
-            <p>Get the green for the tennis purist, the pink for the aesthetic girl, or the <strong>Grand Slam Bundle ($199)</strong> if you&rsquo;re buying for two. For ACE on its own, use code:</p>
-            <div class="promo-code">ACE25</div>
-            <p>That takes Tennis Green to <strong>$74.25</strong> and Nancy Pink to <strong>$81.75</strong>.</p>
-            <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch&utm_content=verdict" target="_blank" rel="noopener" class="buy-now-btn">Shop ACE</a>
+            <h2>Pick your shot</h2>
+            <p>If your answers leaned power, <strong>SMASH</strong> is your match: deep, rumbly, built for long rallies, and the one Nancy calls &ldquo;the most powerful shot in tennis.&rdquo; For SMASH, use code:</p>
+            <div class="promo-code">SMASH25</div>
+            <p>That takes it from $129 to <strong>$96.75</strong>. Finesse player? ACE25 takes ACE to <strong>$74.25</strong> in Tennis Green or <strong>$81.75</strong> in Nancy Pink. Landed on Grand Slam? Both come in one box for <strong>$199</strong>.</p>
+            <div class="verdict-actions">
+                <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=verdict" target="_blank" rel="noopener" class="buy-now-btn">Shop SMASH</a>
+                <a href="https://hellonancy.com/products/grand-slam-bundle?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=verdict" target="_blank" rel="noopener" class="buy-now-btn">Get both for $199</a>
+            </div>
         </div>
 
-        <p class="ps"><strong>P.S.</strong> The Nancy Pink already sold out once, less than two weeks after launch. If both colors are in stock when you read this, that&rsquo;s your sign.</p>
+        <p class="ps"><strong>P.S.</strong> Took the quiz twice to get a different answer? We saw nothing. That&rsquo;s exactly what the Grand Slam Bundle is for. And if you&rsquo;re Team ACE and pink-curious, Nancy Pink sold out less than two weeks after launch before it restocked. Don&rsquo;t overthink it.</p>
 
         <p class="author-bio">Nell Farrow writes about sex, culture and the products actually worth your money for The Latest.</p>
 
-        <nav class="keep-reading" aria-label="Keep reading">
+        <aside class="keep-reading" aria-label="Keep reading">
             <div class="keep-reading__label">Keep reading</div>
             <ul>
-                <li><a href="/tennis-bracelet/">Forget the Tennis Bracelet. This Is the Tennis Gift She&rsquo;ll Actually Use.</a></li>
-                <li><a href="/playing-tennis/">Why Is Everyone on TikTok Suddenly &ldquo;Playing Tennis&rdquo;?</a></li>
-                <li><a href="/ace-or-smash/">Ace or Smash? Your Tennis Personality Says Which One You Need</a></li>
+                <li><a href="/power-shot/">The Most Powerful Shot in Tennis Is Now Available for Your Nightstand</a></li>
+                <li><a href="/retire-the-rose/">Everyone&rsquo;s Retiring Their Rose. This Is What&rsquo;s Replacing It.</a></li>
+                <li><a href="/mixed-doubles/">Mixed Doubles: The Tennis Set Couples Are Buying Instead of Another Date Night</a></li>
             </ul>
-        </nav>
+        </aside>
 
         <div class="post-tags">
-            <span>Tagged:</span> hello nancy, tennis, gift guide, sex toys
+            <span>Tagged:</span> hello nancy, tennis, quiz, sex toys
         </div>
 
     </article>
@@ -1187,7 +1336,7 @@
     <section class="ad-disclosure" id="disclosure">
         <div class="ad-disclosure__inner">
             <div class="ad-disclosure__title">Advertisement &middot; Sponsored Content &middot; Affiliate Disclosure</div>
-            <p>This is a paid advertorial for <a href="https://hellonancy.com/?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">Nancy (Hello Nancy)</a>. It promotes products sold by an affiliated company and reflects the advertiser&rsquo;s views, not independent editorial. This page contains affiliate links: the publisher is paid when readers click or buy through the links here, at no extra cost to you. Nancy is not affiliated with, sponsored by, or endorsed by any tennis tournament, league, governing body, or player. The fan posts shown are public social posts as reported by IBTimes UK and reposted by WorldStar Hip Hop; the WorldStar post is a paid partnership with Nancy, and some creators referenced are paid Nancy partners. Social screenshots are shown with usernames, profile photos and a third-party logo blurred and a tournament name redacted; no affiliation with any tournament or brand shown is implied. Survey figures come from Nancy&rsquo;s own post-purchase survey of ACE and SMASH buyers (Aug 26 to Oct 2, 2026). The products described are intended for general wellness and adult (18+) personal use; they are not medical devices and are not intended to diagnose, treat, cure, or prevent any disease or condition. Individual results vary. Pricing, discount codes and availability are subject to change. Customer quotes reflect individual experiences and are not a guarantee of results. &ldquo;The Latest&rdquo; is a demonstration masthead and is not affiliated with any news publication.</p>
+            <p>This is a paid advertorial for <a href="https://hellonancy.com/?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash" target="_blank" rel="noopener">Nancy (Hello Nancy)</a>. It promotes products sold by an affiliated company and reflects the advertiser&rsquo;s views, not independent editorial. This page contains affiliate links: the publisher is paid when readers click or buy through the links here, at no extra cost to you. Nancy is not affiliated with, sponsored by, or endorsed by any tennis tournament, league, governing body, or player. Some creators referenced are paid Nancy partners. The quiz is for entertainment only. Survey figures come from Nancy&rsquo;s own post-purchase survey of ACE and SMASH buyers (Aug 26 to Oct 2, 2026) and an earlier Nancy buyer survey. The products described are intended for general wellness and adult (18+) personal use; they are not medical devices and are not intended to diagnose, treat, cure, or prevent any disease or condition. Individual results vary. Pricing, discount codes and availability are subject to change. Customer quotes reflect individual experiences and are not a guarantee of results. &ldquo;The Latest&rdquo; is a demonstration masthead and is not affiliated with any news publication.</p>
         </div>
     </section>
 
@@ -1200,8 +1349,8 @@
 
     <!-- ─── STICKY MOBILE CTA ─── -->
     <div class="sticky-cta" id="stickyCta">
-        <div class="sticky-cta__price">ACE from <strong>$74.25</strong> &nbsp;with code ACE25</div>
-        <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch&utm_content=sticky" target="_blank" rel="noopener" class="buy-now-btn">Shop ACE</a>
+        <div class="sticky-cta__price">ACE + SMASH &nbsp;<span class="original">$228</span> <strong>$199</strong></div>
+        <a href="https://hellonancy.com/products/grand-slam-bundle?utm_source=thelatest&utm_medium=advertorial&utm_campaign=ace_or_smash&utm_content=sticky" target="_blank" rel="noopener" class="buy-now-btn">Both for $199: the Grand Slam Bundle</a>
     </div>
 
     <script>
