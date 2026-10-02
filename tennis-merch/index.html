@@ -775,6 +775,19 @@
         .faq details[open] summary::after { content: "\2212"; }
         .entry-content .faq p { font-size: 1.0625rem; margin: 0 0 18px; color: var(--n20); }
         .entry-content p.ps { background: var(--cream); padding: 18px 22px; font-size: 1.0625rem; }
+        .meme-figure { margin: 32px auto 36px; max-width: 520px; }
+        .meme-figure img { width: 100%; height: auto; border: 1px solid var(--n90); border-radius: 14px; background: #fff; }
+        .meme-figure--cover img { border: 0; border-radius: 4px; transform: rotate(-1.2deg); outline: 10px solid var(--ball); }
+        .meme-figure figcaption { font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--n50); margin-top: 14px; line-height: 1.45; text-align: center; }
+        .meme-figure--cover figcaption { margin-top: 22px; }
+        .comment-stack { background: var(--blush); padding: 10px 22px; margin: 8px 0 32px; }
+        .comment { display: flex; gap: 14px; align-items: flex-start; padding: 14px 0; border-bottom: 1px solid rgba(0,0,0,0.08); }
+        .comment:last-child { border-bottom: 0; }
+        .comment__avatar { flex: 0 0 38px; height: 38px; border-radius: 50%; background: var(--n80); display: block; }
+        .comment__avatar--pink { background: #EE7FA3; }
+        .comment__avatar--green { background: var(--ball); }
+        .comment__who { display: block; font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.08em; color: var(--n30); margin-bottom: 4px; }
+        .entry-content .comment p { margin: 0; font-family: var(--font-secondary); font-weight: 600; font-size: 1.125rem; line-height: 1.35; }
         body { padding-bottom: 0; }
         @media (max-width: 768px) { .site-footer { padding-bottom: 120px; } }
     </style>
@@ -829,7 +842,7 @@
             <p class="entry-dek">Honestly, an easy mistake. It&rsquo;s the most collectible thing in tennis right now, and it&rsquo;s not for the court.</p>
             <div class="entry-byline">
                 <div class="entry-byline__authors">By Nell Farrow</div>
-                <div class="entry-byline__date">October 2, 2026 &nbsp;&middot;&nbsp; 8 min read</div>
+                <div class="entry-byline__date">October 2, 2026 &nbsp;&middot;&nbsp; 9 min read</div>
             </div>
         </div>
     </section>
@@ -845,16 +858,50 @@
 
         <p class="lede">Picture it. Late summer in Queens, the biggest two weeks in New York tennis, and someone is handing out the cutest little tennis balls you have ever seen. Soft. Palm-sized. One in that perfect fuzzy-ball green, one in a pink that belongs on a pleated skirt.</p>
 
-        <p>One fan pocketed hers, assumed she&rsquo;d scored a limited-edition souvenir, and told the internet about it. Then she took a closer look.</p>
+        <p>One fan pocketed hers, assumed she&rsquo;d scored a limited-edition souvenir, and told the internet about it. Then her friend took a closer look.</p>
 
-        <blockquote class="social-quote">
-            <p>&ldquo;They&rsquo;re handing out these cute little special edition tennis balls at [the tournament]&hellip; So turns out they&rsquo;re actually tennis ball shaped vibrators from Nancy LOL.&rdquo;</p>
-            <cite>A fan&rsquo;s social post, as reported by IBTimes UK, September 10, 2026</cite>
-        </blockquote>
+        <figure class="meme-figure">
+            <img src="/tennis-merch/img/meme-thread-1.jpg" alt="Social post reading: They're handing out these cute little special edition tennis balls, with photos of a pink ball in the stands. A reply says: So turns out they're actually tennis ball shaped vibrators from Nancy LOL" loading="lazy" decoding="async" width="1080" height="1350">
+            <figcaption>The post that started it all. Usernames blurred, and one tournament name redacted, because our lawyers are tennis fans too.</figcaption>
+        </figure>
 
-        <p>The internet did what the internet does. One reply summed up the collective mood: &ldquo;The way I would&rsquo;ve put that in my purse and gone home still thinking it was merch.&rdquo;</p>
+        <p>Reader, she had not scored merch.</p>
 
-        <p>Same, babe. Same.</p>
+        <!-- ─── THE MEME ─── -->
+        <h2>Then the internet got hold of it</h2>
+
+        <p>Within a day, the mix-up was a WorldStar headline. The carousel (a paid partnership with Nancy, in the name of full transparency) pulled in more than <strong>35,000 likes and 640-plus comments</strong>, and it turns out everyone has an opinion about accidentally pocketing a vibrator.</p>
+
+        <figure class="meme-figure meme-figure--cover">
+            <img src="/tennis-merch/img/meme-worldstar-cover.jpg" alt="Meme with a NEWS banner: Woman shocked after realizing the free tennis ball she got at the [redacted] was actually this. A woman in a pink dress dances in the stands, with an inset of a hand holding a pink ACE" loading="lazy" decoding="async" width="1080" height="1350">
+            <figcaption>The headline that launched a thousand group chats. Via @worldstar on Instagram, September 9, 2026. Paid partnership with Hello Nancy.</figcaption>
+        </figure>
+
+        <p>The comments section, as always, was the best part.</p>
+
+        <div class="comment-stack" aria-label="Selected comments">
+            <div class="comment">
+                <span class="comment__avatar" aria-hidden="true"></span>
+                <div><span class="comment__who">A reply on X</span><p>&ldquo;The way I would&rsquo;ve put that in my purse and gone home still thinking it was merch 🤣&rdquo;</p></div>
+            </div>
+            <div class="comment">
+                <span class="comment__avatar comment__avatar--pink" aria-hidden="true"></span>
+                <div><span class="comment__who">An Instagram comment</span><p>&ldquo;I def would&rsquo;ve been confused af lmaooo&rdquo;</p></div>
+            </div>
+            <div class="comment">
+                <span class="comment__avatar comment__avatar--green" aria-hidden="true"></span>
+                <div><span class="comment__who">An Instagram comment</span><p>&ldquo;Then the pink got the nerve to be sold out 😂&rdquo;</p></div>
+            </div>
+        </div>
+
+        <p>And because the universe has a sense of humor, Nancy&rsquo;s girls in matching pink, the ones handing out the balls, ended up dancing on the big screen.</p>
+
+        <figure class="meme-figure">
+            <img src="/tennis-merch/img/meme-thread-2.jpg" alt="Social post reading: Omg I was there and saw them dancing on the jumbotron. Now I'm mad I didn't get one, above a photo of two women in pink dresses dancing on a stadium big screen" loading="lazy" decoding="async" width="1080" height="1350">
+            <figcaption>FOMO, but make it tennis. Username and a sponsor&rsquo;s logo blurred.</figcaption>
+        </figure>
+
+        <p>Mad she didn&rsquo;t get one. Honestly? Same, babe. Same.</p>
 
         <p>The ball in question is <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">ACE</a>, an air-pulse toy from Hello Nancy, the brand behind that viral lemon. And honestly? Being mistaken for merch is the best review it could have gotten.</p>
 
@@ -1130,7 +1177,7 @@
     <section class="ad-disclosure" id="disclosure">
         <div class="ad-disclosure__inner">
             <div class="ad-disclosure__title">Advertisement &middot; Sponsored Content &middot; Affiliate Disclosure</div>
-            <p>This is a paid advertorial for <a href="https://hellonancy.com/?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">Nancy (Hello Nancy)</a>. It promotes products sold by an affiliated company and reflects the advertiser&rsquo;s views, not independent editorial. This page contains affiliate links: the publisher is paid when readers click or buy through the links here, at no extra cost to you. Nancy is not affiliated with, sponsored by, or endorsed by any tennis tournament, league, governing body, or player. The fan post quoted is a public social post as reported by IBTimes UK; some creators referenced are paid Nancy partners. Survey figures come from Nancy&rsquo;s own post-purchase survey of ACE and SMASH buyers (Aug 26 to Oct 2, 2026). The products described are intended for general wellness and adult (18+) personal use; they are not medical devices and are not intended to diagnose, treat, cure, or prevent any disease or condition. Individual results vary. Pricing, discount codes and availability are subject to change. Customer quotes reflect individual experiences and are not a guarantee of results. &ldquo;The Latest&rdquo; is a demonstration masthead and is not affiliated with any news publication.</p>
+            <p>This is a paid advertorial for <a href="https://hellonancy.com/?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">Nancy (Hello Nancy)</a>. It promotes products sold by an affiliated company and reflects the advertiser&rsquo;s views, not independent editorial. This page contains affiliate links: the publisher is paid when readers click or buy through the links here, at no extra cost to you. Nancy is not affiliated with, sponsored by, or endorsed by any tennis tournament, league, governing body, or player. The fan posts shown are public social posts as reported by IBTimes UK and reposted by WorldStar Hip Hop; the WorldStar post is a paid partnership with Nancy, and some creators referenced are paid Nancy partners. Social screenshots are shown with usernames, profile photos and a third-party logo blurred and a tournament name redacted; no affiliation with any tournament or brand shown is implied. Survey figures come from Nancy&rsquo;s own post-purchase survey of ACE and SMASH buyers (Aug 26 to Oct 2, 2026). The products described are intended for general wellness and adult (18+) personal use; they are not medical devices and are not intended to diagnose, treat, cure, or prevent any disease or condition. Individual results vary. Pricing, discount codes and availability are subject to change. Customer quotes reflect individual experiences and are not a guarantee of results. &ldquo;The Latest&rdquo; is a demonstration masthead and is not affiliated with any news publication.</p>
         </div>
     </section>
 
