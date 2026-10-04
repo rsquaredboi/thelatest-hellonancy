@@ -801,6 +801,15 @@
         .keep-reading li { padding: 14px 0; border-bottom: 1px solid var(--n90); font-family: var(--font-secondary); font-weight: 700; font-size: 1.125rem; line-height: 1.3; }
         .entry-content .keep-reading a { text-decoration: none; font-weight: 700; }
         .entry-content .keep-reading a:hover { text-decoration: underline; }
+        .proof-bar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); margin: 8px 0 36px; }
+        .proof-bar__item { padding: 16px 12px; border-right: 1px solid var(--n90); }
+        .proof-bar__item:last-child { border-right: 0; }
+        .proof-bar__num { display: block; font-family: var(--font-secondary); font-weight: 800; font-stretch: 85%; font-size: 1.75rem; line-height: 1; color: var(--ink); }
+        .proof-bar__num .star { color: #E8A317; }
+        .proof-bar__label { display: block; font-family: var(--font-primary); font-size: 0.8125rem; line-height: 1.35; color: var(--n30); margin-top: 6px; }
+        .proof-bar__src { grid-column: 1 / -1; font-family: var(--font-mono); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--n50); padding: 8px 0 10px; border-top: 1px solid var(--n90); line-height: 1.4; }
+        @media (max-width: 640px) { .proof-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); } .proof-bar__item:nth-child(2) { border-right: 0; } .proof-bar__item:nth-child(-n+2) { border-bottom: 1px solid var(--n90); } .proof-bar__num { font-size: 1.5rem; } }
+        .product-card__proof { font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--n30); margin: -6px 0 16px; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -883,6 +892,15 @@
                 <li><strong>Want more power?</strong> <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=retire_the_rose&utm_content=cheat_smash" target="_blank" rel="noopener">SMASH</a>, the wand on the same team, is $129.</li>
             </ul>
         </aside>
+
+        <div class="proof-bar" role="list" aria-label="Why people trust Nancy">
+            <div class="proof-bar__item" role="listitem"><span class="proof-bar__num">1,800+</span><span class="proof-bar__label">ACEs sold since its late-August launch</span></div>
+            <div class="proof-bar__item" role="listitem"><span class="proof-bar__num">4.8<span class="star">&#9733;</span></span><span class="proof-bar__label">From the makers of the Lem: 19,000+ reviews</span></div>
+            <div class="proof-bar__item" role="listitem"><span class="proof-bar__num">1M+</span><span class="proof-bar__label">Lems sold since 2023, per Nancy</span></div>
+            <div class="proof-bar__item" role="listitem"><span class="proof-bar__num">37%</span><span class="proof-bar__label">of buyers bought it for a partner</span></div>
+            <div class="proof-bar__src">Sales: Nancy paid-order data, Aug 25 to Oct 4, 2026. Lem rating and review count as shown on hellonancy.com, Oct 4, 2026. Survey: 568 ACE and SMASH buyers.</div>
+        </div>
+
 
         <!-- ─── WHAT THE ROSE GOT RIGHT ─── -->
         <h2>What the rose got right</h2>
@@ -1004,7 +1022,7 @@
         <div class="user-reviews">
             <div class="user-review">
                 &ldquo;Today we had our first game/match. Ace won 😉&rdquo;
-                <span class="user-review__attr">Verified buyer &middot; hellonancy.com &middot; September 2026</span>
+                <span class="user-review__attr">Customer review &middot; hellonancy.com &middot; September 2026</span>
             </div>
             <div class="user-review">
                 &ldquo;Perfect size, speed and gentle on the body.&rdquo;
@@ -1020,6 +1038,7 @@
             <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/pink.webp?width=600" alt="A hand holding ACE in Nancy Pink against a pink tennis skirt" loading="lazy" decoding="async" width="600" height="600">
             <div class="product-card__name">Hello Nancy ACE<br>Air Suction Massager</div>
             <div class="product-card__price"><strong>$99</strong> Tennis Green &nbsp;&middot;&nbsp; <strong>$109</strong> Nancy Pink<br>$74.25 / $81.75 with code ACE25</div>
+            <div class="product-card__proof">1,800+ sold since launch &middot; From the makers of the 4.8&#9733; Lem</div>
             <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=retire_the_rose&utm_content=card_ace" target="_blank" rel="noopener" class="buy-now-btn">Shop ACE at Hello Nancy</a>
             <div class="product-gallery">
                 <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/Product_4_1.png?width=400" alt="ACE in Nancy Pink on a pink court line" loading="lazy" decoding="async" width="400" height="400">
@@ -1104,7 +1123,7 @@
     <section class="ad-disclosure" id="disclosure">
         <div class="ad-disclosure__inner">
             <div class="ad-disclosure__title">Advertisement &middot; Sponsored Content &middot; Affiliate Disclosure</div>
-            <p>This is a paid advertorial for <a href="https://hellonancy.com/?utm_source=thelatest&utm_medium=advertorial&utm_campaign=retire_the_rose&utm_content=disclosure" target="_blank" rel="noopener">Nancy (Hello Nancy)</a>. It promotes products sold by an affiliated company and reflects the advertiser&rsquo;s views, not independent editorial. This page contains affiliate links: the publisher is paid when readers click or buy through the links here, at no extra cost to you. Nancy is not affiliated with, sponsored by, or endorsed by any tennis tournament, league, governing body, or player. &ldquo;The rose toy&rdquo; refers to a generic, widely copied product style; no specific brand or manufacturer is described, and no claims are made about the quality or performance of any rose toy. Social view counts are as publicly reported. The fan post referenced was a public social post as reported by IBTimes UK. Survey figures come from Nancy&rsquo;s own post-purchase survey of ACE and SMASH buyers (Aug 26 to Oct 2, 2026) and an earlier Nancy buyer survey. The products described are intended for general wellness and adult (18+) personal use; they are not medical devices and are not intended to diagnose, treat, cure, or prevent any disease or condition. Individual results vary. Pricing, discount codes and availability are subject to change. Customer quotes reflect individual experiences and are not a guarantee of results. &ldquo;The Latest&rdquo; is a demonstration masthead and is not affiliated with any news publication.</p>
+            <p>This is a paid advertorial for <a href="https://hellonancy.com/?utm_source=thelatest&utm_medium=advertorial&utm_campaign=retire_the_rose&utm_content=disclosure" target="_blank" rel="noopener">Nancy (Hello Nancy)</a>. It promotes products sold by an affiliated company and reflects the advertiser&rsquo;s views, not independent editorial. This page contains affiliate links: the publisher is paid when readers click or buy through the links here, at no extra cost to you. Nancy is not affiliated with, sponsored by, or endorsed by any tennis tournament, league, governing body, or player. &ldquo;The rose toy&rdquo; refers to a generic, widely copied product style; no specific brand or manufacturer is described, and no claims are made about the quality or performance of any rose toy. Social view counts are as publicly reported. The fan post referenced was a public social post as reported by IBTimes UK. Survey figures come from Nancy&rsquo;s own post-purchase survey of ACE and SMASH buyers (Aug 26 to Oct 2, 2026) and an earlier Nancy buyer survey. The products described are intended for general wellness and adult (18+) personal use; they are not medical devices and are not intended to diagnose, treat, cure, or prevent any disease or condition. Individual results vary. Pricing, discount codes and availability are subject to change. Customer quotes reflect individual experiences and are not a guarantee of results. &ldquo;The Latest&rdquo; is a demonstration masthead and is not affiliated with any news publication. Sales figures are from Nancy&rsquo;s paid-order data (Aug 25 to Oct 4, 2026). The Lem rating and review count are as displayed on hellonancy.com on Oct 4, 2026; &ldquo;1M+ Lems sold&rdquo; is Nancy&rsquo;s own figure. Quoted reviews are from Nancy&rsquo;s product pages and are labeled &ldquo;verified buyer&rdquo; only where the review platform marks them as verified purchases.</p>
         </div>
     </section>
 

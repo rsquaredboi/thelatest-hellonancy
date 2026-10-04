@@ -796,6 +796,15 @@
         .keep-reading li { padding: 14px 0; border-bottom: 1px solid var(--n90); font-family: var(--font-secondary); font-weight: 700; font-size: 1.1875rem; line-height: 1.25; }
         .entry-content .keep-reading a { text-decoration: none; font-weight: 700; }
         .entry-content .keep-reading a:hover { color: var(--accent); }
+        .proof-bar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); margin: 8px 0 36px; }
+        .proof-bar__item { padding: 16px 12px; border-right: 1px solid var(--n90); }
+        .proof-bar__item:last-child { border-right: 0; }
+        .proof-bar__num { display: block; font-family: var(--font-secondary); font-weight: 800; font-stretch: 85%; font-size: 1.75rem; line-height: 1; color: var(--ink); }
+        .proof-bar__num .star { color: #E8A317; }
+        .proof-bar__label { display: block; font-family: var(--font-primary); font-size: 0.8125rem; line-height: 1.35; color: var(--n30); margin-top: 6px; }
+        .proof-bar__src { grid-column: 1 / -1; font-family: var(--font-mono); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--n50); padding: 8px 0 10px; border-top: 1px solid var(--n90); line-height: 1.4; }
+        @media (max-width: 640px) { .proof-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); } .proof-bar__item:nth-child(2) { border-right: 0; } .proof-bar__item:nth-child(-n+2) { border-bottom: 1px solid var(--n90); } .proof-bar__num { font-size: 1.5rem; } }
+        .product-card__proof { font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--n30); margin: -6px 0 16px; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -922,6 +931,15 @@
             </ul>
         </aside>
 
+        <div class="proof-bar" role="list" aria-label="Why people trust Nancy">
+            <div class="proof-bar__item" role="listitem"><span class="proof-bar__num">1,800+</span><span class="proof-bar__label">ACEs sold since its late-August launch</span></div>
+            <div class="proof-bar__item" role="listitem"><span class="proof-bar__num">4.8<span class="star">&#9733;</span></span><span class="proof-bar__label">From the makers of the Lem: 19,000+ reviews</span></div>
+            <div class="proof-bar__item" role="listitem"><span class="proof-bar__num">1M+</span><span class="proof-bar__label">Lems sold since 2023, per Nancy</span></div>
+            <div class="proof-bar__item" role="listitem"><span class="proof-bar__num">37%</span><span class="proof-bar__label">of buyers bought it for a partner</span></div>
+            <div class="proof-bar__src">Sales: Nancy paid-order data, Aug 25 to Oct 4, 2026. Lem rating and review count as shown on hellonancy.com, Oct 4, 2026. Survey: 568 ACE and SMASH buyers.</div>
+        </div>
+
+
         <!-- ─── WHAT IS IT ─── -->
         <h2>Wait, so what is it?</h2>
 
@@ -1045,6 +1063,7 @@
             <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/Untitleddesign_4_34bd96cc-0288-4fdd-8fd9-f75d8b4fb9d8.png?width=600" alt="Hands holding ACE in Nancy Pink and Tennis Green" loading="lazy" decoding="async" width="600" height="600">
             <div class="product-card__name">Hello Nancy ACE<br>Air Suction Massager</div>
             <div class="product-card__price"><strong>$99</strong> Tennis Green &nbsp;&middot;&nbsp; <strong>$109</strong> Nancy Pink<br>25% off with code ACE25</div>
+            <div class="product-card__proof">1,800+ sold since launch &middot; From the makers of the 4.8&#9733; Lem</div>
             <a href="https://hellonancy.com/products/ace-air-suction-massager?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch&utm_content=card_ace" target="_blank" rel="noopener" class="buy-now-btn">Shop ACE at Hello Nancy</a>
             <div class="product-gallery">
                 <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/pink.webp?width=400" alt="ACE in Nancy Pink held in one hand" loading="lazy" decoding="async" width="400" height="400">
@@ -1099,7 +1118,7 @@
         <div class="user-reviews">
             <div class="user-review">
                 &ldquo;Today we had our first game/match. Ace won 😉&rdquo;
-                <span class="user-review__attr">Verified buyer &bull; hellonancy.com &bull; September 2026</span>
+                <span class="user-review__attr">Customer review &bull; hellonancy.com &bull; September 2026</span>
             </div>
             <div class="user-review">
                 &ldquo;Perfect size, speed and gentle on the body.&rdquo;
@@ -1187,7 +1206,7 @@
     <section class="ad-disclosure" id="disclosure">
         <div class="ad-disclosure__inner">
             <div class="ad-disclosure__title">Advertisement &middot; Sponsored Content &middot; Affiliate Disclosure</div>
-            <p>This is a paid advertorial for <a href="https://hellonancy.com/?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">Nancy (Hello Nancy)</a>. It promotes products sold by an affiliated company and reflects the advertiser&rsquo;s views, not independent editorial. This page contains affiliate links: the publisher is paid when readers click or buy through the links here, at no extra cost to you. Nancy is not affiliated with, sponsored by, or endorsed by any tennis tournament, league, governing body, or player. The fan posts shown are public social posts as reported by IBTimes UK and reposted by WorldStar Hip Hop; the WorldStar post is a paid partnership with Nancy, and some creators referenced are paid Nancy partners. Social screenshots are shown with usernames, profile photos and a third-party logo blurred and a tournament name redacted; no affiliation with any tournament or brand shown is implied. Survey figures come from Nancy&rsquo;s own post-purchase survey of ACE and SMASH buyers (Aug 26 to Oct 2, 2026). The products described are intended for general wellness and adult (18+) personal use; they are not medical devices and are not intended to diagnose, treat, cure, or prevent any disease or condition. Individual results vary. Pricing, discount codes and availability are subject to change. Customer quotes reflect individual experiences and are not a guarantee of results. &ldquo;The Latest&rdquo; is a demonstration masthead and is not affiliated with any news publication.</p>
+            <p>This is a paid advertorial for <a href="https://hellonancy.com/?utm_source=thelatest&utm_medium=advertorial&utm_campaign=tennis_merch" target="_blank" rel="noopener">Nancy (Hello Nancy)</a>. It promotes products sold by an affiliated company and reflects the advertiser&rsquo;s views, not independent editorial. This page contains affiliate links: the publisher is paid when readers click or buy through the links here, at no extra cost to you. Nancy is not affiliated with, sponsored by, or endorsed by any tennis tournament, league, governing body, or player. The fan posts shown are public social posts as reported by IBTimes UK and reposted by WorldStar Hip Hop; the WorldStar post is a paid partnership with Nancy, and some creators referenced are paid Nancy partners. Social screenshots are shown with usernames, profile photos and a third-party logo blurred and a tournament name redacted; no affiliation with any tournament or brand shown is implied. Survey figures come from Nancy&rsquo;s own post-purchase survey of ACE and SMASH buyers (Aug 26 to Oct 2, 2026). The products described are intended for general wellness and adult (18+) personal use; they are not medical devices and are not intended to diagnose, treat, cure, or prevent any disease or condition. Individual results vary. Pricing, discount codes and availability are subject to change. Customer quotes reflect individual experiences and are not a guarantee of results. &ldquo;The Latest&rdquo; is a demonstration masthead and is not affiliated with any news publication. Sales figures are from Nancy&rsquo;s paid-order data (Aug 25 to Oct 4, 2026). The Lem rating and review count are as displayed on hellonancy.com on Oct 4, 2026; &ldquo;1M+ Lems sold&rdquo; is Nancy&rsquo;s own figure. Quoted reviews are from Nancy&rsquo;s product pages and are labeled &ldquo;verified buyer&rdquo; only where the review platform marks them as verified purchases.</p>
         </div>
     </section>
 

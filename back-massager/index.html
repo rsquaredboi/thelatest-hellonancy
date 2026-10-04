@@ -801,6 +801,15 @@
         .entry-content .keep-reading a { text-decoration: none; font-weight: 700; }
         .entry-content .keep-reading a:hover { color: var(--accent); }
         .keep-reading__kicker { display: block; font-family: var(--font-primary); font-weight: 400; font-size: 0.9375rem; color: var(--n40); margin-top: 4px; }
+        .proof-bar { display: grid; grid-template-columns: repeat(4, minmax(0, 1fr)); gap: 0; border-top: 2px solid var(--ink); border-bottom: 2px solid var(--ink); margin: 8px 0 36px; }
+        .proof-bar__item { padding: 16px 12px; border-right: 1px solid var(--n90); }
+        .proof-bar__item:last-child { border-right: 0; }
+        .proof-bar__num { display: block; font-family: var(--font-secondary); font-weight: 800; font-stretch: 85%; font-size: 1.75rem; line-height: 1; color: var(--ink); }
+        .proof-bar__num .star { color: #E8A317; }
+        .proof-bar__label { display: block; font-family: var(--font-primary); font-size: 0.8125rem; line-height: 1.35; color: var(--n30); margin-top: 6px; }
+        .proof-bar__src { grid-column: 1 / -1; font-family: var(--font-mono); font-size: 0.625rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--n50); padding: 8px 0 10px; border-top: 1px solid var(--n90); line-height: 1.4; }
+        @media (max-width: 640px) { .proof-bar { grid-template-columns: repeat(2, minmax(0, 1fr)); } .proof-bar__item:nth-child(2) { border-right: 0; } .proof-bar__item:nth-child(-n+2) { border-bottom: 1px solid var(--n90); } .proof-bar__num { font-size: 1.5rem; } }
+        .product-card__proof { font-family: var(--font-mono); font-size: 0.6875rem; text-transform: uppercase; letter-spacing: 0.06em; color: var(--n30); margin: -6px 0 16px; line-height: 1.5; }
     </style>
 </head>
 <body>
@@ -896,16 +905,25 @@
             </ul>
         </aside>
 
+        <div class="proof-bar" role="list" aria-label="Why people trust Nancy">
+            <div class="proof-bar__item" role="listitem"><span class="proof-bar__num">1,800+</span><span class="proof-bar__label">SMASH wands sold since its late-August launch</span></div>
+            <div class="proof-bar__item" role="listitem"><span class="proof-bar__num">4.8<span class="star">&#9733;</span></span><span class="proof-bar__label">From the makers of the Lem: 19,000+ reviews</span></div>
+            <div class="proof-bar__item" role="listitem"><span class="proof-bar__num">1M+</span><span class="proof-bar__label">Lems sold since 2023, per Nancy</span></div>
+            <div class="proof-bar__item" role="listitem"><span class="proof-bar__num">37%</span><span class="proof-bar__label">of buyers bought it for a partner</span></div>
+            <div class="proof-bar__src">Sales: Nancy paid-order data, Aug 25 to Oct 4, 2026. Lem rating and review count as shown on hellonancy.com, Oct 4, 2026. Survey: 568 ACE and SMASH buyers.</div>
+        </div>
+
+
         <!-- ─── SHOULDERS ─── -->
         <h2>Okay, but can you actually use it on your shoulders?</h2>
 
         <p>Here’s the funny part. Yes, you can. SMASH is a full-body wand, and for once the cover story happens to be true.</p>
 
-        <p>Don’t take our word for it. One verified buyer left this on Nancy’s site:</p>
+        <p>Don’t take our word for it. One buyer left this on Nancy’s site:</p>
 
         <div class="social-quote">
             <p>“Love this toy but not for what you imagine. It’s quite powerful and given its size, lovely for massaging tight muscles everywhere.”</p>
-            <cite>Verified buyer &middot; hellonancy.com &middot; September 2026</cite>
+            <cite>Customer review &middot; hellonancy.com &middot; September 2026</cite>
         </div>
 
         <p>“Not for what you imagine” is doing a lot of work in that sentence, and we love it. So when you tell your mom <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=back_massager" target="_blank" rel="noopener">your new wand</a> is for your shoulders, you’re technically not lying. We’d just keep the rest of the conversation short.</p>
@@ -997,24 +1015,24 @@
         <!-- ─── REVIEWS ─── -->
         <h2>What buyers are saying</h2>
 
-        <p>The shoulder crowd isn’t the only one leaving reviews. A few more from verified SMASH buyers:</p>
+        <p>The shoulder crowd isn’t the only one leaving reviews. A few more from SMASH buyers:</p>
 
         <div class="user-reviews">
             <div class="user-review">
                 “oh my god i LOVEEE all of the nancy toys but this is by far my favorite”
-                <span class="user-review__attr">Verified buyer &middot; hellonancy.com &middot; September 2026</span>
+                <span class="user-review__attr">Customer review &middot; hellonancy.com &middot; September 2026</span>
             </div>
             <div class="user-review">
                 “Discreet packaging. Arrived in great time. Excellent quality and addition to my kit!”
-                <span class="user-review__attr">Verified buyer &middot; hellonancy.com &middot; September 2026</span>
+                <span class="user-review__attr">Customer review &middot; hellonancy.com &middot; September 2026</span>
             </div>
             <div class="user-review">
                 “This toy felt absolutely amazing. As a male who bought this for me and my wife I just had to unbox it and use it first myself. Oops…”
-                <span class="user-review__attr">Verified buyer &middot; hellonancy.com &middot; September 2026</span>
+                <span class="user-review__attr">Customer review &middot; hellonancy.com &middot; September 2026</span>
             </div>
             <div class="user-review">
                 “We like the rumbly vibrations and the multiple modes is a plus. The weight is a little on the heavy side but we understand that this is a quality product.”
-                <span class="user-review__attr">Verified buyer &middot; hellonancy.com &middot; September 2026</span>
+                <span class="user-review__attr">Customer review &middot; hellonancy.com &middot; September 2026</span>
             </div>
         </div>
 
@@ -1026,6 +1044,7 @@
             <img src="https://cdn.shopify.com/s/files/1/0726/3764/5121/files/Tennis_wand_14.png?width=600" alt="SMASH wand inside its open striped box, with the lid reading Welcome to Center Court" loading="lazy" decoding="async" width="600" height="600">
             <div class="product-card__name">Hello Nancy SMASH<br>Wand Vibrator</div>
             <div class="product-card__price"><span class="original">$129</span> <strong>$96.75</strong><br>with code SMASH25</div>
+            <div class="product-card__proof">1,800+ sold since launch &middot; From the makers of the 4.8&#9733; Lem</div>
             <a href="https://hellonancy.com/products/smash-wand-vibrator?utm_source=thelatest&utm_medium=advertorial&utm_campaign=back_massager&utm_content=card_smash" target="_blank" rel="noopener" class="buy-now-btn">Shop SMASH at Hello Nancy</a>
             <p class="product-card__also">Buying for two? <a href="https://hellonancy.com/products/grand-slam-bundle?utm_source=thelatest&utm_medium=advertorial&utm_campaign=back_massager&utm_content=card_bundle" target="_blank" rel="noopener">The Grand Slam Bundle</a> pairs SMASH with ACE for $199.</p>
         </div>
@@ -1040,11 +1059,11 @@
             </details>
             <details>
                 <summary>Can I really use it as a massager?</summary>
-                <p>It’s a full-body wand, and one verified buyer says it’s “lovely for massaging tight muscles everywhere.” Just remember it’s an adult toy, not a medical device.</p>
+                <p>It’s a full-body wand, and one buyer says it’s “lovely for massaging tight muscles everywhere.” Just remember it’s an adult toy, not a medical device.</p>
             </details>
             <details>
                 <summary>Is it heavy?</summary>
-                <p>It has some heft. One verified buyer called the weight “a little on the heavy side” but added, “we understand that this is a quality product.” The handle is designed as “a grip built for long rallies.”</p>
+                <p>It has some heft. One buyer called the weight “a little on the heavy side” but added, “we understand that this is a quality product.” The handle is designed as “a grip built for long rallies.”</p>
             </details>
             <details>
                 <summary>Is it waterproof?</summary>
@@ -1095,7 +1114,7 @@
     <section class="ad-disclosure" id="disclosure">
         <div class="ad-disclosure__inner">
             <div class="ad-disclosure__title">Advertisement &middot; Sponsored Content &middot; Affiliate Disclosure</div>
-            <p>This is a paid advertorial for <a href="https://hellonancy.com/?utm_source=thelatest&utm_medium=advertorial&utm_campaign=back_massager" target="_blank" rel="noopener">Nancy (Hello Nancy)</a>. It promotes products sold by an affiliated company and reflects the advertiser&rsquo;s views, not independent editorial. This page contains affiliate links: the publisher is paid when readers click or buy through the links here, at no extra cost to you. Nancy is not affiliated with, sponsored by, or endorsed by any tennis tournament, league, governing body, or player. Survey figures come from Nancy&rsquo;s own post-purchase survey of ACE and SMASH buyers (Aug 26 to Oct 2, 2026). The products described are intended for general wellness and adult (18+) personal use; they are not medical devices and are not intended to diagnose, treat, cure, or prevent any disease or condition, and any reference to massage is casual, not a health claim. Individual results vary. Pricing, discount codes and availability are subject to change. Customer quotes reflect individual experiences and are not a guarantee of results. &ldquo;The Latest&rdquo; is a demonstration masthead and is not affiliated with any news publication.</p>
+            <p>This is a paid advertorial for <a href="https://hellonancy.com/?utm_source=thelatest&utm_medium=advertorial&utm_campaign=back_massager" target="_blank" rel="noopener">Nancy (Hello Nancy)</a>. It promotes products sold by an affiliated company and reflects the advertiser&rsquo;s views, not independent editorial. This page contains affiliate links: the publisher is paid when readers click or buy through the links here, at no extra cost to you. Nancy is not affiliated with, sponsored by, or endorsed by any tennis tournament, league, governing body, or player. Survey figures come from Nancy&rsquo;s own post-purchase survey of ACE and SMASH buyers (Aug 26 to Oct 2, 2026). The products described are intended for general wellness and adult (18+) personal use; they are not medical devices and are not intended to diagnose, treat, cure, or prevent any disease or condition, and any reference to massage is casual, not a health claim. Individual results vary. Pricing, discount codes and availability are subject to change. Customer quotes reflect individual experiences and are not a guarantee of results. &ldquo;The Latest&rdquo; is a demonstration masthead and is not affiliated with any news publication. Sales figures are from Nancy&rsquo;s paid-order data (Aug 25 to Oct 4, 2026). The Lem rating and review count are as displayed on hellonancy.com on Oct 4, 2026; &ldquo;1M+ Lems sold&rdquo; is Nancy&rsquo;s own figure. Quoted reviews are from Nancy&rsquo;s product pages and are labeled &ldquo;verified buyer&rdquo; only where the review platform marks them as verified purchases.</p>
         </div>
     </section>
 
