@@ -6,7 +6,8 @@
   var trackingKeys = Object.create(null);
   [
     'fbclid', 'gclid', 'gbraid', 'wbraid', 'dclid', 'gclsrc', 'gad_source',
-    'msclkid', 'ttclid', 'twclid', 'li_fat_id', 'sccid', 'sc_click_id',
+    'msclkid', 'ttclid', 'twclid', 'tw_source', 'tw_adid', 'tw_campaign', 'tw_adsetid', 'fbadid', 'gadid',
+    'li_fat_id', 'sccid', 'sc_click_id',
     'rdt_cid', 'epik', 'obclid', 'tblci', 'taboola_click_id', 'irclickid',
     'campaign_id', 'campaignid', 'campaign_name', 'adset_id', 'adsetid',
     'adset_name', 'ad_id', 'adid', 'ad_name', 'adgroup_id', 'adgroupid',
@@ -79,6 +80,11 @@
         url.searchParams.set(key, attribution[key]);
       });
       var patched = url.toString();
+      // The shared pixel owns the current campaign after SPA navigation.
+      // Compose before writing so our initial snapshot cannot restore stale IDs.
+      if (window.NancyTripleWhale && typeof window.NancyTripleWhale.decorate === 'function') {
+        patched = window.NancyTripleWhale.decorate(patched);
+      }
       if (patched !== href) anchor.setAttribute('href', patched);
     } catch (error) {
       // A malformed authored link must not stop other links from being patched.
