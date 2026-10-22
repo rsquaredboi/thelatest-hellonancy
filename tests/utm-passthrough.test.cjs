@@ -44,6 +44,7 @@ for (const slug of slugs) {
     const query = '?utm_source=facebook&utm_medium=paid_social&utm_campaign=tennis_ads'
       + '&utm_id=campaign_123&utm_custom=extra&fbclid=click_123'
       + '&campaign_id=campaign_123&adset_id=adset_123&ad_id=ad_123&placement=instagram'
+      + '&tw_source=facebook&tw_adid=tw-ad&tw_campaign=tw-campaign&tw_adsetid=tw-adset&fbadid=meta-ad&gadid=google-ad'
       + '&v=quiet&email=private%40example.com';
     const dom = page(html, query);
     const anchors = [...dom.window.document.querySelectorAll('a[href]')].filter(anchor => {
@@ -63,6 +64,12 @@ for (const slug of slugs) {
       assert.equal(target.get('campaign_id'), 'campaign_123', anchor.href);
       assert.equal(target.get('adset_id'), 'adset_123', anchor.href);
       assert.equal(target.get('ad_id'), 'ad_123', anchor.href);
+      assert.equal(target.get('tw_source'), 'facebook', anchor.href);
+      assert.equal(target.get('tw_adid'), 'tw-ad', anchor.href);
+      assert.equal(target.get('tw_campaign'), 'tw-campaign', anchor.href);
+      assert.equal(target.get('tw_adsetid'), 'tw-adset', anchor.href);
+      assert.equal(target.get('fbadid'), 'meta-ad', anchor.href);
+      assert.equal(target.get('gadid'), 'google-ad', anchor.href);
       assert.equal(target.has('utm_content'), false, anchor.href);
       assert.equal(target.has('utm_term'), false, anchor.href);
       assert.equal(target.has('v'), false, anchor.href);
@@ -203,7 +210,7 @@ for (const eventName of ['click', 'auxclick', 'contextmenu']) {
 
 test('the actual ACE or SMASH quiz reveals an attributed result after all answers', () => {
   const html = readFileSync(path.join(root, 'ace-or-smash/index.html'), 'utf8');
-  const dom = page(html, '?utm_source=meta&utm_campaign=quiz-ad&utm_content=creative-123&fbclid=quiz-click');
+  const dom = page(html, '?utm_source=meta&utm_campaign=quiz-ad&utm_content=creative-123&fbclid=quiz-click&tw_source=facebook&tw_adid=quiz-tw-ad&tw_campaign=quiz-tw-campaign&tw_adsetid=quiz-tw-adset');
   const quizScript = [...dom.window.document.querySelectorAll('script')]
     .find(element => element.textContent.includes("var quiz = document.getElementById('quiz')"));
   assert.ok(quizScript);
@@ -218,6 +225,10 @@ test('the actual ACE or SMASH quiz reveals an attributed result after all answer
   assert.equal(params(result.querySelector('a')).get('utm_campaign'), 'quiz-ad');
   assert.equal(params(result.querySelector('a')).get('utm_content'), 'creative-123');
   assert.equal(params(result.querySelector('a')).get('fbclid'), 'quiz-click');
+  assert.equal(params(result.querySelector('a')).get('tw_source'), 'facebook');
+  assert.equal(params(result.querySelector('a')).get('tw_adid'), 'quiz-tw-ad');
+  assert.equal(params(result.querySelector('a')).get('tw_campaign'), 'quiz-tw-campaign');
+  assert.equal(params(result.querySelector('a')).get('tw_adsetid'), 'quiz-tw-adset');
   dom.window.close();
 });
 
@@ -239,5 +250,30 @@ test('case-insensitive tracking keys use the first value and oversized inputs ar
   assert.deepEqual([...params(dom.window.document.querySelector('a'))], [
     ['utm_source', 'meta'], ['utm_id', '123'], ['gbraid', 'google']
   ]);
+  dom.window.close();
+});
+
+test('a later campaign settles without restoring the initial campaign or repeating href writes', async () => {
+  const dom = page('<a href="https://hellonancy.com/products/ace?variant=42&discount=KEEP#offer">Shop</a>',
+    '?utm_source=facebook&utm_campaign=old-campaign&utm_term=old-term&fbclid=old-click&tw_source=facebook&tw_adid=old-ad');
+  dom.window.XMLHttpRequest = class { open() {} send() {} setRequestHeader() {} };
+  dom.window.eval(readFileSync(path.join(root, 'assets/nancy-triplewhale.js'), 'utf8'));
+  dom.window.history.pushState(null, '', '?utm_source=google&gclid=new-click&gadid=new-ad');
+  await settle(dom.window);
+  await settle(dom.window);
+  const anchor = dom.window.document.querySelector('a');
+  assert.equal(params(anchor).get('utm_source'), 'google');
+  assert.equal(params(anchor).get('gadid'), 'new-ad');
+  for (const stale of ['utm_campaign', 'utm_term', 'fbclid', 'tw_source', 'tw_adid']) assert.equal(params(anchor).has(stale), false, stale);
+  assert.equal(params(anchor).get('variant'), '42');
+  assert.equal(params(anchor).get('discount'), 'KEEP');
+  assert.equal(new URL(anchor.href).hash, '#offer');
+  let writes = 0;
+  const observer = new dom.window.MutationObserver(records => { writes += records.length; });
+  observer.observe(anchor, { attributes: true, attributeFilter: ['href'] });
+  await settle(dom.window);
+  await settle(dom.window);
+  observer.disconnect();
+  assert.equal(writes, 0);
   dom.window.close();
 });
